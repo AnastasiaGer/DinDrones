@@ -1,377 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DinDrones</title>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
+
 <body>
-  <header class="header">
+   <!-- SVG symbols -->
+   <svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="fb" aria-hidden="true" focusable="false"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
+      <path d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z" />
+    </symbol>
+
+    <symbol id="ig" aria-hidden="true" focusable="false" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M16 0c-4.349 0-4.891.021-6.593.093c-1.709.084-2.865.349-3.885.745a7.847 7.847 0 0 0-2.833 1.849A7.757 7.757 0 0 0 .84 5.52C.444 6.54.179 7.696.095 9.405c-.077 1.703-.093 2.244-.093 6.593s.021 4.891.093 6.593c.084 1.704.349 2.865.745 3.885a7.847 7.847 0 0 0 1.849 2.833a7.757 7.757 0 0 0 2.833 1.849c1.02.391 2.181.661 3.885.745c1.703.077 2.244.093 6.593.093s4.891-.021 6.593-.093c1.704-.084 2.865-.355 3.885-.745a7.847 7.847 0 0 0 2.833-1.849a7.716 7.716 0 0 0 1.849-2.833c.391-1.02.661-2.181.745-3.885c.077-1.703.093-2.244.093-6.593s-.021-4.891-.093-6.593c-.084-1.704-.355-2.871-.745-3.885a7.847 7.847 0 0 0-1.849-2.833A7.716 7.716 0 0 0 26.478.838c-1.02-.396-2.181-.661-3.885-.745C20.89.016 20.349 0 16 0zm0 2.88c4.271 0 4.781.021 6.469.093c1.557.073 2.405.333 2.968.553a4.989 4.989 0 0 1 1.844 1.197a4.931 4.931 0 0 1 1.192 1.839c.22.563.48 1.411.553 2.968c.072 1.688.093 2.199.093 6.469s-.021 4.781-.099 6.469c-.084 1.557-.344 2.405-.563 2.968c-.303.751-.641 1.276-1.199 1.844a5.048 5.048 0 0 1-1.844 1.192c-.556.22-1.416.48-2.979.553c-1.697.072-2.197.093-6.479.093s-4.781-.021-6.48-.099c-1.557-.084-2.416-.344-2.979-.563c-.76-.303-1.281-.641-1.839-1.199c-.563-.563-.921-1.099-1.197-1.844c-.224-.556-.48-1.416-.563-2.979c-.057-1.677-.084-2.197-.084-6.459c0-4.26.027-4.781.084-6.479c.083-1.563.339-2.421.563-2.979c.276-.761.635-1.281 1.197-1.844c.557-.557 1.079-.917 1.839-1.199c.563-.219 1.401-.479 2.964-.557c1.697-.061 2.197-.083 6.473-.083zm0 4.907A8.21 8.21 0 0 0 7.787 16A8.21 8.21 0 0 0 16 24.213A8.21 8.21 0 0 0 24.213 16A8.21 8.21 0 0 0 16 7.787zm0 13.546c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333S18.948 21.333 16 21.333zM26.464 7.459a1.923 1.923 0 0 1-1.923 1.921a1.919 1.919 0 1 1 0-3.838c1.057 0 1.923.86 1.923 1.917z"/>
+    </symbol>
+
+    <symbol id="whatsup" aria-hidden="true" focusable="false" width="35" height="35" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.166 13.166 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.058 13.058 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.13 16.13 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z"/>
+    </symbol>
+  </svg>
+  <!-- SVG symbols END -->
+
+  <!-- Header -->
+  <header class="header" id="header">
     <div class="container">
-      <div id="header__nav" class="header__inner">
-        <div data-menuanchor="top">
-          <a class="logo" href="#top">
-            <picture class="logo__img">
-              <source srcset="images/logo-mobile.png" media="(max-width: 600px)">
-              <img src="images/logo.png" alt="">
-            </picture>
-          </a>
-        </div>
+      <div class="header__inner">
+        <div class="header__logo" data-scroll="#intro">DinDrones</div>
 
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="#" data-scroll="#shop">Shop</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#" data-scroll="#about">About</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#" data-scroll="#blog">Blog</a>
+            </li>
+            <!-- <li>
+              <a class="nav__link" href="#" data-scroll="#contact">Contact</a>
+            </li> -->
 
-        <nav class="menu">
-          <button class="menu__btn">
-            <span class="menu__btn-line"></span>
-          </button>
-          <ul class="menu__list">
-            <li class="menu__list-item" data-menuanchor="products">
-              <a href="#products" class="menu__list-link">ABOUT DRONE</a>
-            </li>
-            <li class="menu__list-item" data-menuanchor="benefits">
-              <a href="#benefits" class="menu__list-link">ADVANTAGES</a>
-            </li>
-            <li class="menu__list-item" data-menuanchor="specification">
-              <a href="#specification" class="menu__list-link">SPECIFICATIONS</a>
-            </li>
-            <li class="menu__list-item" data-menuanchor="questions">
-              <a href="#questions" class="menu__list-link">QUESTIONS</a>
-            </li>
-            <li class="menu__list-item" data-menuanchor="contacts">
-              <a href="#contacts" class="menu__list-link">CONTACTS</a>
-            </li>
-            <li class="menu__list-phone">
-              <a class="header__phone-menu" href="tel:80505676767">8 (050) 567 67 67</a>
-            </li>
+            <!-- <li>
+                  <a class="nav__link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+
+                <li>
+                  <a class="nav__link" href="#"><i class="fas fa-search"></i></a>
+                </li> -->
           </ul>
-
         </nav>
 
-        <div class="header__info">
-          <button class="header__btn">
-            Buy
-          </button>
-          <a class="header__phone" href="tel:80505676767">8 (050) 567 67 67</a>
-        </div>
+        <button class="nav-toggle" id="nav_toggle" type="button">
+          <span class="nav-toggle__item">Menu</span>
+        </button>
       </div>
+
     </div>
   </header>
 
-  <main id="fullpage">
 
-    <section data-anchor="top" class="page-section top">
-      <div class="page-section__wrapper top__wrapper">
-        <div class="container">
-          <div class="top__inner">
-            <h1 class="top__title">
-              Mavic 2 Pro
-            </h1>
-            <img src="images/mavic.png" alt="">
-            <p class="top__text">
-              Quadcopter Dji Mavic 2 Pro
-               with Hasselblad professional camera
-            </p>
-            <ul class="top__social-list">
-              <li class="top__social-item">
-                <a class="top__social-link" href="#">
-                  <img src="images/facebook.svg" alt="">
-                </a>
-              </li>
-              <li class="top__social-item">
-                <a class="top__social-link" href="#">
-                  <img src="images/youtube.svg" alt="">
-                </a>
-              </li>
-              <li class="top__social-item">
-                <a class="top__social-link" href="#">
-                  <img src="images/instagram.svg" alt="">
-                </a>
-              </li>
-            </ul>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
+
+      <div class="intro__inner">
+        <div class="intro__content">
+          <h2 class="intro__title">Hello!!! <br>
+            We Are Creative
+            Digital Shop</h2>
+
+          <div class="social">
+            <a class="social__link" href="https://www.instagram.com/din_fpv/" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#ig"></use>
+              </svg>
+            </a>
+            <a class="social__link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#fb"></use>
+              </svg>
+            </a>
+            <a class="social__link" href="#" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#whatsup"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div><!-- /.intro__inner -->
+
+    </div><!-- /.container -->
+  </section>
+
+
+
+  <!-- Works -->
+  <div class="works" id="shop">
+    <div class="container">
+
+      <div class="works__nav">
+        <a class="works__nav-link" href="#" data-filter="all">All</a>
+        <a class="works__nav-link" href="#" data-filter="drones">Drones</a>
+        <a class="works__nav-link" href="#" data-filter="boxes">Boxes</a>
+        <a class="works__nav-link" href="#" data-filter="platforms">Platforms</a>
+      </div>
+
+
+      <div class="portfolio">
+        <div class="portfolio__col" data-cat="drones">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Drones</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
           </div>
         </div>
 
-      <div class="scroll__btn">
-        <a href="#products">
-          <img src="images/arrow-down.svg" alt="">
-        </a>
+        <div class="portfolio__col" data-cat="boxes">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone-2.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Boxes</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio__col" data-cat="platforms">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone-3.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Platforms</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio__col" data-cat="boxes">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone-2.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Boxes</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio__col" data-cat="platforms">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone-3.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Platforms</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio__col" data-cat="drones">
+          <div class="work" data-modal="#modal_project_1">
+            <img class="work__image" src="img/drone.jpg" alt="">
+            <div class="work__content">
+              <div class="work__cat">category: Drones</div>
+              <div class="work__title">
+                Project title
+                <span> 300 $</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.portfolio -->
+
+      <div class="text-center">
+        <a class="btn  btn--sm" href="#">LOAD MORE</a>
       </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.works -->
+
+  <!-- LOGOS -->
+  <div class="section section--grey">
+    <div class="container">
+      <div class="logos">
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/1.png" alt="">
+        </div>
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/2.png" alt="">
+        </div>
+
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/3.png" alt="">
+        </div>
+
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/4.png" alt="">
+        </div>
+
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/5.png" alt="">
+        </div>
+
+        <div class="logos__item">
+          <img class="logos__img" src="img/logos/6.png" alt="">
+        </div>
+
+      </div> <!--  logos -->
+    </div> <!--  container -->
+  </div> <!--  section -->
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="about__inner">
+        <div class="about__photo">
+          <img class="img" src="img/boss.jpg" alt="">
+        </div>
+
+        <div class="about__content">
+          <h3 class="about__title">about me</h3>
+          <h2 class="about__bigtitle">WHO AM I</h2>
+          <div class="about__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste a dolores consectetur
+              provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis
+              id laboriosam animi eos excepturi sint.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste a dolores consectetur
+              provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis
+              id laboriosam animi eos excepturi sint.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste a dolores consectetur
+              provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis
+              id laboriosam animi eos excepturi sint.</p>
+          </div>
+          <p>You can contact me</p>
+
+          <div class="social">
+            <a class="social__link" href="https://www.instagram.com/din_fpv/" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#ig"></use>
+              </svg>
+            </a>
+            <a class="social__link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#fb"></use>
+              </svg>
+            </a>
+            <a class="social__link" href="#" target="_blank">
+              <svg class="social__icon" width="35" height="35">
+                <use xlink:href="#whatsup"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+        </div><!-- /.about__content -->
+      </div><!-- /.about__inner -->
+
+    </div><!-- /.container -->
+  </section>
+
+
+
+  <!-- Reviews -->
+  <div class="reviews">
+    <div class="container">
+
+      <div class="reviews__item">
+        <div class="reviews__text">
+          <p>Thank you to the guys at Baylands and Santa Cruz MultiGP for inviting Jake to practice with you this weekend. Looking forward to capping it off with the Baylands race tomorrow.</p>
+        </div>
+
+        <div class="reviews__author">
+          <img class="reviews__photo" src="img/review-1.jpg" alt="">
+          <div class="reviews__name">Don Capobres</div>
+          <div class="reviews__rating">
+            <img class="reviews__star" src="img/star.svg" width="13" height="13" alt="">
+            <img class="reviews__star" src="img/star.svg" width="13" height="13" alt="">
+            <img class="reviews__star" src="img/star.svg" width="13" height="13" alt="">
+            <img class="reviews__star" src="img/star.svg" width="13" height="13" alt="">
+            <img class="reviews__star  reviews__star--unactive" src="img/star.svg" width="13" height="13" alt="">
+          </div>
+        </div>
+      </div><!-- /.reviews__item -->
+
+    </div><!-- /.container -->
+  </div><!-- /.reviews -->
+
+
+
+  <!-- News -->
+  <section class="news" id="blog">
+    <div class="container">
+
+      <div class="news__header">
+        <h3 class="news__title">Inspirational Posts</h3>
+      </div>
+
+
+      <div class="articles">
+        <div class="articles__col">
+          <div class="articles__item">
+            <div class="articles__header">
+              <time class="articles__date">
+                22<br>nov
+              </time>
+              <a href="#">
+                <img class="articles__photo" src="img/posts/event-1.jpg" alt="">
+              </a>
+            </div>
+            <div class="articles__content">
+              <h4 class="articles__title">
+                <a href="#">Santa Cruz MGP had a fun fly today</a>
+              </h4>
+              <div class="articles__cat">CATEGORY</div>
+              <div class="articles__text">
+                <p>Santa Cruz MGP had a fun fly today, which gathered 18 pilots from Los Angeles, Sacramento, San
+                  Francisco and Silicon Valley! It was 40F in the am and around 70F after lunch! Great day with 15+
+                  flown packs on an awesome track, lets do it again?!
+
+                  #multigp #fpvdrones #dronestagram #racingdrone #fpvquad #fpv #fpvaddiction #fpvlife #drone #drones
+                  #quadcopter #racing</p>
+              </div>
+            </div>
+            <a class="btn  btn--sm" href="#">READ MORE</a>
+          </div>
+        </div>
+
+        <div class="articles__col">
+          <div class="articles__item">
+            <div class="articles__header">
+              <time class="articles__date">
+                10<br>nov
+              </time>
+              <a href="#">
+                <img class="articles__photo" src="img/posts/event-2.jpg" alt="">
+              </a>
+            </div>
+            <div class="articles__content">
+              <h4 class="articles__title">
+                <a href="#">15th place nationwide</a>
+              </h4>
+              <div class="articles__cat">CATEGORY</div>
+              <div class="articles__text">
+                <p>15th place nationwide, who would believe? Skill, luck, self control, friends & family - everything
+                  made it happen.
+                  MultiGP Nationals 2020 turned out to be a great event despite all the difficulties with covid,
+                  president elections, rain, 50mph gusts of wind, coffee bean size mosquitoes, sleepless nights, and
+                  crazy friends. Do i want to do it again? YES!</p>
+              </div>
+            </div>
+            <a class="btn  btn--sm" href="#">READ MORE</a>
+          </div>
+        </div>
+
+        <div class="articles__col">
+          <div class="articles__item">
+            <div class="articles__header">
+              <time class="articles__date">
+                8<br>nov
+              </time>
+              <a href="#">
+                <img class="articles__photo" src="img/posts/event-3.jpg" alt="">
+              </a>
+            </div>
+            <div class="articles__content">
+              <h4 class="articles__title">
+                <a href="#">Nationals 2020 FTW!!</a>
+              </h4>
+              <div class="articles__cat">CATEGORY</div>
+              <div class="articles__text">
+                <p>Florida has unpredictable weather! Nationals 2020 FTW!!
+                  #multigp #fpvdrones #dronestagram #racingdrone #fpvquad #fpv #fpvaddiction #fpvlife #drone #drones
+                  #quadcopter #racing</p>
+              </div>
+            </div>
+            <a class="btn  btn--sm" href="#">READ MORE</a>
+          </div>
+        </div>
+
+      </div><!-- /.articles -->
+
+      <div class="news__footer">
+        <a class="news__link" href="#">See more posts</a>
+      </div>
+
+    </div><!-- /.container -->
+  </section>
+
+  <section class="instagram">
+    <div class="instagram__item">
+      <a href="https://www.instagram.com/p/CHO9VR2niey/" class="instagram__link" target="_blank">
+        <img class="instagram__photo" src="img/ig/ig-1.jpg" alt="">
+        <div class="instagram__content">
+          <img src="img/ig.svg" alt="">
+        </div>
+      </a>
     </div>
-    </section>
 
-    <section data-anchor="products" class="page-section products">
-      <div class="page-section__wrapper products__wrapper">
-        <div class="container">
-          <h3 class="title products__title">What is the Mavic 2 Pro?</h3>
-          <div class="products__inner">
-            <div class="products__text">
-              <p>
-                The Mavic 2 Pro drone is an engineering marvel ideal for aerial photography. Equipped with all the best DJI technology, the drone will transform the world of aerial photography.
-              </p>
-              <p>
-                The Mavic 2 Pro features the all-new Hasselblad L1D-20c camera. The L1D-20c is powered by Hasselblad's unique Natural Color Solution (HNCS) 5 technology, which allows users to capture stunning aerial images with 20 megapixels resolution and stunning colors.
-              </p>
-            </div>
-            <div class="products__slider-box">
-              <p class="products__slider-text">Best drone
-                aerial photography technology</p>
-              <div class="products__slider">
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-                <div class="products__slider-item">
-                  <img src="images/slider-1.jpg" alt="" class="products__slider-img">
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="instagram__item">
+      <a href="https://www.instagram.com/p/CEdTWCono2t/" class="instagram__link" target="_blank">
+        <img class="instagram__photo" src="img/ig/ig-2.jpg" alt="">
+        <div class="instagram__content">
+          <img src="img/ig.svg" alt="">
         </div>
-        <div class="scroll__btn">
-          <a href="#benefits">
-            <img src="images/arrow-down.svg" alt="">
-          </a>
+      </a>
+    </div>
+
+    <div class="instagram__item">
+      <a href="https://www.instagram.com/p/CEPYxpoHY9n/" class="instagram__link" target="_blank">
+        <img class="instagram__photo" src="img/ig/ig-3.jpg" alt="">
+        <div class="instagram__content">
+          <img src="img/ig.svg" alt="">
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
 
-    <section data-anchor="benefits" class="page-section benefits">
-      <div class="page-section__wrapper benefits__wrapper">
-        <div class="container">
-          <h3 class="title">ADVANTAGES</h3>
-          <div class="benefits__items">
-
-            <div class="benefits__item">
-              <div class="benefits__num">1</div>
-              <div class="benefits__img">
-                <img src="images/benefits-1.jpg" alt="">
-              </div>
-              <div class="benefits__info">
-                <h4 class="benefits__info-title">Intellectual
-                  modes</h4>
-                <p class="benefits__info-text">The Mavic 2 inherits 6 standard QuickShot intelligent shooting modes: Roket / Dronie / Circle / Helix / Boomerang / Asteroid.</p>
-              </div>
-            </div>
-
-            <div class="benefits__item">
-              <div class="benefits__num">2</div>
-              <div class="benefits__img">
-                <img src="images/benefits-2.jpg" alt="">
-              </div>
-              <div class="benefits__info">
-                <h4 class="benefits__info-title">Active Track 2.0</h4>
-                <p class="benefits__info-text">The advanced second generation mode detects and tracks objects even more accurately, faster and smarter.</p>
-              </div>
-            </div>
-
-            <div class="benefits__item">
-              <div class="benefits__num">3</div>
-              <div class="benefits__img">
-                <img src="images/benefits-3.jpg" alt="">
-              </div>
-              <div class="benefits__info">
-                <h4 class="benefits__info-title">Panoramic
-                  shooting</h4>
-                <p class="benefits__info-text">The Mavic 2 supports 4 modes
-                  panoramic shooting: spherical,
-                  180 degrees,
-                  horizontal, vertical</p>
-              </div>
-            </div>
-
-            <div class="benefits__item">
-              <div class="benefits__num">4</div>
-              <div class="benefits__img">
-                <img src="images/benefits-4.jpg" alt="">
-              </div>
-              <div class="benefits__info">
-                <h4 class="benefits__info-title">Cool
-                  camera!</h4>
-                <p class="benefits__info-text">Hyperlapse technology in four performance modes.
-                  Enhanced photo HDR mode
-                  HyperLight function for low light shooting
-                  4K shooting
-                  </p>
-              </div>
-            </div>
-          </div>
+    <div class="instagram__item">
+      <a href="https://www.instagram.com/p/CBlv4FMnxg0/" class="instagram__link" target="_blank">
+        <img class="instagram__photo" src="img/ig/ig-4.jpg" alt="">
+        <div class="instagram__content">
+          <img src="img/ig.svg" alt="">
         </div>
-        <div class="scroll__btn">
-          <a href="#specification">
-            <img src="images/arrow-down.svg" alt="">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section data-anchor="specification" class="page-section specification">
-      <div class="page-section__wrapper specification__wrapper">
-        <div class="container">
-          <h3 class="title">Specifications</h3>
-          <div class="specification__inner">
-            <div class="specification__item">
-              <div class="specification__box specification__box-1">
-                <h4 class="specification__box-title">Dlog-M 10 бит</h4>
-                <p class="specification__box-text">The Mavic 2 Pro supports a 10-bit Dlog-M color profile with a wider dynamic range for more color correction.</p>
-              </div>
-
-              <div class="specification__box specification__box-2">
-                <h4 class="specification__box-title">Camera Hasselblad</h4>
-                <p class="specification__box-text">Hasselblad L1D-20C camera
-                  known for their ergonomic design
-                  and superb image quality.</p>
-              </div>
-            </div>
-
-            <div class="specification__item specification__item--center">
-              <img src="images/mavic.png" alt="">
-            </div>
-
-            <div class="specification__item">
-              <div class="specification__box specification__box-3">
-                <h4 class="specification__box-title">CMOS sensor 1</h4>
-                <p class="specification__box-text">New 1-inch CMOS sensor has four times the active area of the Mavic Pro</p>
-              </div>
-
-              <div class="specification__box specification__box-4">
-                <h4 class="specification__box-title">HDR video</h4>
-                <p class="specification__box-text">With 4K HDR 10-bit video support, the Mavic 2 Pro can be connected to an HLG 4K-compatible TV for viewing in full color spectrum</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="scroll__btn">
-          <a href="#questions">
-            <img src="images/arrow-down.svg" alt="">
-          </a>
-        </div>
-      </div>
+      </a>
     </div>
   </section>
 
-  <section data-anchor="questions" class="page-section questions">
-    <div class="page-section__wrapper questions__wrapper">
-      <div class="container">
-        <h3 class="title">Still have questions?</h3>
-        <div class="questions__items">
-          <div class="questions__item">
-            <h4 class="questions__item-title">What are the differences between the Mavic 2 Pro and the Mavic 2 Zoom?</h4>
-            <p class="questions__item-text">The Mavic 2 has improved almost every aspect: camera, video transmission, flight time, speed, noise level, multi-directional obstacle detection, smart features and the unique Hyperlapse function.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__inner">
+        <div class="footer__credits">
+          <div class="footer__copyright">
+            &copy; 2020 germanova.site
           </div>
 
-          <div class="questions__item questions__item--active">
-            <h4 class="questions__item-title">Why is the Mavic 2 better than the Mavic Pro?  </h4>
-            <p class="questions__item-text">The Mavic 2 has improved almost every aspect: camera, video transmission, flight time, speed, noise level, multi-directional obstacle detection, smart features and the unique Hyperlapse function.</p>
+
+
+          <div class="footer__social">
+            <a class="footer__social-link" href="https://www.instagram.com/din_fpv/" target="_blank">
+              <svg class="footer__social-icon" width="35" height="35">
+                <use xlink:href="#ig"></use>
+              </svg>
+            </a>
+            <a class="footer__social-link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+              <svg class="footer__social-icon" width="35" height="35">
+                <use xlink:href="#fb"></use>
+              </svg>
+            </a>
+            <a class="footer__social-link" href="#" target="_blank">
+              <svg class="footer__social-icon" width="35" height="35">
+                <use xlink:href="#whatsup"></use>
+              </svg>
+            </a>
           </div>
+        </div><!-- /.footer__credits -->
 
-          <div class="questions__item">
-            <h4 class="questions__item-title">Can the Mavic 2 be connected to DJI Goggles?</h4>
-            <p class="questions__item-text">The Mavic 2 has improved almost every aspect: camera, video transmission, flight time, speed, noise level, multi-directional obstacle detection, smart features and the unique Hyperlapse function.</p>
-          </div>
+        <nav class="footer__nav">
+          <a class="footer__nav-link" href="#">Shop</a>
+          <a class="footer__nav-link" href="#">About</a>
+          <a class="footer__nav-link" href="#">Blog</a>
+        </nav>
+      </div><!-- /.footer__inner -->
 
-          <div class="questions__item">
-            <h4 class="questions__item-title">Is the Mavic 2 waterproof?</h4>
-            <p class="questions__item-text">The Mavic 2 has improved almost every aspect: camera, video transmission, flight time, speed, noise level, multi-directional obstacle detection, smart features and the unique Hyperlapse function.</p>
-          </div>
-        </div>
-      </div>
-      <div class="scroll__btn">
-        <a href="#contacts">
-          <img src="images/arrow-down.svg" alt="">
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section data-anchor="contacts" class="page-section contacts">
-    <div class="page-section__wrapper contacts__wrapper">
-      <div class="container">
-        <h3 class="title">Contacts</h3>
-        <div class="contacts__inner">
-          <div class="contacts__info">
-
-            <div class="contacts__info-box">
-              <p class="contacts__info-title">Kiev</p>
-              <a class="contacts__info-phone" href="tel:80505676767">+8 (050) 567– 67 – 67</a>
-              <a class="contacts__info-email" href="mailto:dgi.mavic2pro.kiev@mail.ru">dgi.mavic2pro.kiev@mail.ru</a>
-            </div>
-
-            <div class="contacts__info-box">
-              <p class="contacts__info-title">Moscow</p>
-              <a class="contacts__info-phone" href="tel:84995676767">+7 (499) 567– 67 – 67</a>
-              <a class="contacts__info-email" href="mailto:dgi.mavic2pro.moscow@mail.ru">dgi.mavic2pro.moscow@mail.ru</a>
-            </div>
-
-            <div class="contacts__info-box">
-              <p class="contacts__info-title">Minsk</p>
-              <a class="contacts__info-phone" href="tel:375175676767">+3 (7517) 567– 67 – 67</a>
-              <a class="contacts__info-email" href="mailto:dgi.mavic2pro.minsk@mail.ru">dgi.mavic2pro.minsk@mail.ru</a>
-            </div>
-          </div>
-
-          <div class="contacts__form">
-            <form>
-              <h4 class="contacts__form-title">Still have questions? </h4>
-              <p class="contacts__form-text">We will definitely contact you within two working days</p>
-              <div class="contacts__form-line">
-                <input class="contacts__form-input" placeholder="Ваше имя" type="text">
-                <input class="contacts__form-input" placeholder="Ваше e-mail" type="email">
-              </div>
-              <textarea class="contacts__form-textarea" placeholder="Что вас интересует?"></textarea>
-              <button class="contacts__form-btn" type="submit">Submit</button>
-            </form>
-          </div>
-
-          <ul class="contacts__social-list">
-            <li class="contacts__social-item">
-              <a class="contacts__social-link" href="#">
-                <img src="images/facebook.svg" alt="">
-              </a>
-            </li>
-            <li class="contacts__social-item">
-              <a class="contacts__social-link" href="#">
-                <img src="images/youtube.svg" alt="">
-              </a>
-            </li>
-            <li class="contacts__social-item">
-              <a class="contacts__social-link" href="#">
-                <img src="images/instagram.svg" alt="">
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <footer class="footer">
-          <div class="container">
-            <p class="footer__copy">
-              © DJI, 2020
-            </p>
-          </div>
-        </footer>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-
+    </div><!-- /.container -->
+  </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/libs.min.js"></script>
-  <script src="js/main.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

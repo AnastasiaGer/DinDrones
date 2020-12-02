@@ -1,0 +1,26 @@
+// main: ../style.scss
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 -15px;
+}
+
+.logos__item {
+  padding: 0 15px;
+}
+
+.logos__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------- */
+/* 575px */
+/* ----------------- */
+@media (max-width: 575px) {
+  .logos {
+    flex-wrap: wrap;
+  }
+}
