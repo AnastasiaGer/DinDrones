@@ -37,7 +37,7 @@ $(function () {
 
     $("html, body").animate({
       scrollTop: blockOffset
-    }, 500);
+    }, 300);
   });
 
   // Menu Nav Toggle
