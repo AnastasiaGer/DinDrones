@@ -1,0 +1,51 @@
+// main: ../style.scss
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: 10px;
+}
+
+.header.fixed {
+  background-color: #eb8b8d;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translate3d(0, 0, 0);
+  padding: 10px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+.header.active {
+  background-color: #eb8b8d;
+}
+
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  cursor: pointer;
+}
+
+@media (max-width: $mobile) {
+  .header {
+    padding: 10px 0;
+  }
+}
+
