@@ -40,3 +40,15 @@
   text-transform: uppercase;
   font-weight: 700;
 }
+
+@media (max-width: $mobile) {
+  .work {
+    max-width: 370px;
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .work {
+    margin: 0 auto;
+  }
+}

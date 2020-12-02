@@ -129,17 +129,15 @@
   transform: rotate(-45deg) translate3d(5px, 0px, 0px);
 }
 
-/* ----------------- */
-/* 770px */
-/* ----------------- */
-@media (max-width: 770px) {
+@media (max-width: $mobile) {
   .nav {
     display: none;
     width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #eb8b8d;
+    background-color: rgba(6, 81, 125, .7);
+    // background-image: linear-gradient(270deg, #06517d 0%, #5bb5c7 67%);
   }
 
   .nav.active {

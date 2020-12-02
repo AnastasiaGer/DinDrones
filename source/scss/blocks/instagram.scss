@@ -42,3 +42,16 @@
 .instagram__item:hover .instagram__content {
   opacity: 1;
 }
+
+@media (max-width: $tablet) {
+  .instagram__item {
+    width: 50%;
+  }
+}
+
+
+@media (max-width: $mobile) {
+  .instagram__item {
+    width: 100%;
+  }
+}

@@ -10,3 +10,15 @@
   flex-basis: 33.33333%;
   padding: 1rem;
 }
+
+@media (max-width: $mobile) {
+  .portfolio__col {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .portfolio__col {
+    flex-basis: 100%;
+  }
+}

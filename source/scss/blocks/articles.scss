@@ -83,7 +83,15 @@
   line-height: 2;
 }
 
+@media (max-width: $mobile) {
+  .articles__col {
+    width: 100%;
+  }
 
-
+  .articles__item {
+    max-width: 370px;
+    margin: 0 auto 2rem;
+  }
+}
 
 

@@ -6,15 +6,19 @@
 }
 
 .social__link {
+  display: flex;
+  justify-content: center;
+
   width: 55px;
   height: 55px;
   background-color: #fff;
-  padding-top: 10px;
   border-right: 1px solid #2519a1;
   color: #fff;
 
   transition: background-color .1s linear;
   transition: color .1s linear;
+
+  position: relative;
 }
 
 .social__link:last-child {
@@ -22,5 +26,17 @@
 }
 
 .social__link:hover {
-  background-color: #46dfd4;
+  background-color: rgba(6, 81, 125, .7);
+}
+
+.social__icon {
+  fill: #000;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.social__link:hover .social__icon {
+  fill: #fff;
 }

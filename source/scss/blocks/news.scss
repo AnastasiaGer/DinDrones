@@ -33,3 +33,15 @@
   }
 }
 
+@media (max-width: $tablet) {
+  .news {
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: $mobile) {
+  .news__title {
+    font-size: 2rem;
+  }
+}

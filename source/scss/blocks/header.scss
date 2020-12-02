@@ -43,11 +43,9 @@
   cursor: pointer;
 }
 
-/* ----------------- */
-/* 770px */
-/* ----------------- */
-@media (max-width: 770px) {
+@media (max-width: $mobile) {
   .header {
     padding: 10px 0;
   }
 }
+
