@@ -1,0 +1,26 @@
+// main: ../style.scss
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social__link {
+  width: 55px;
+  height: 55px;
+  background-color: #fff;
+  padding-top: 10px;
+  border-right: 1px solid #2519a1;
+  color: #fff;
+
+  transition: background-color .1s linear;
+  transition: color .1s linear;
+}
+
+.social__link:last-child {
+  border-right: none;
+}
+
+.social__link:hover {
+  background-color: #46dfd4;
+}
