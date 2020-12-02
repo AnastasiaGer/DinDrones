@@ -42,3 +42,12 @@
   text-align: left;
   cursor: pointer;
 }
+
+/* ----------------- */
+/* 770px */
+/* ----------------- */
+@media (max-width: 770px) {
+  .header {
+    padding: 10px 0;
+  }
+}

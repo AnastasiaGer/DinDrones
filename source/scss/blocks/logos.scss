@@ -15,3 +15,12 @@
   max-width: 100%;
   height: auto;
 }
+
+/* ----------------- */
+/* 575px */
+/* ----------------- */
+@media (max-width: 575px) {
+  .logos {
+    flex-wrap: wrap;
+  }
+}
