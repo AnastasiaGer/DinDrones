@@ -352,7 +352,7 @@ body {
 
 .works__nav-link {
   margin: 0 1.2rem;
-  font-size: .8rem;
+  font-size: 1.2rem;
   color: fade(#000, 70%);
   text-decoration: none; }
   .works__nav-link:hover {
@@ -621,3 +621,119 @@ body {
   color: #000;
   font-weight: 300;
   line-height: 2; }
+
+.reviews {
+  padding: 4.6rem 0;
+  position: relative;
+  background: #332F30 url("../../img/reviews-bg.png") center no-repeat; }
+
+.reviews__item {
+  width: 100%;
+  max-width: 830px;
+  margin: 0 auto; }
+
+.reviews__text {
+  font-size: .94rem;
+  line-height: 2.2;
+  color: #fff;
+  text-align: center; }
+
+.reviews__author {
+  width: 100%;
+  margin-top: -51px;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1; }
+
+.reviews__photo {
+  display: block;
+  margin: 0 auto 0.6rem;
+  width: 103px;
+  height: 103px;
+  border-radius: 50%;
+  border: 4px solid #EFEFEF; }
+
+.reviews__name {
+  margin-bottom: .3rem;
+  font-size: 1.06rem;
+  color: #000;
+  font-weight: 700; }
+
+.reviews__company {
+  margin-bottom: .4rem;
+  font-size: .94rem;
+  color: #000;
+  font-style: italic;
+  font-weight: 300; }
+
+.reviews__star {
+  width: 13px;
+  height: 13px; }
+  .reviews__star--unactive {
+    opacity: .3; }
+
+.footer {
+  padding: 1rem 0;
+  background-color: #000; }
+
+.footer__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.footer__credits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.footer__copyright {
+  padding-right: .8rem;
+  margin-right: 1rem;
+  font-size: .94rem;
+  color: #BBBBCC;
+  border-right: 1px solid fade(#000, 35%); }
+
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .footer__social a {
+    margin-right: 1.2rem;
+    text-decoration: none; }
+
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .94rem; }
+
+.footer__nav-link {
+  margin-left: 1.5rem;
+  color: #BBBBCC;
+  text-decoration: none; }
+  .footer__nav-link:hover {
+    text-decoration: underline; }
+  .footer__nav-link--btn {
+    padding: .5rem 1.4rem;
+    border-radius: 20px;
+    border: 1px solid #000;
+    line-height: 1.1; }
+    .footer__nav-link--btn:hover {
+      text-decoration: none;
+      background-color: #BBBBCC;
+      border-color: #BBBBCC;
+      color: #000; }
