@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-$(function(){
-
-
-
-  
-});
-=======
 $(function () {
   var header = $("#header")
   var introH = $("#intro").innerHeight();
@@ -79,4 +71,3 @@ $(function () {
     }
   });
 });
->>>>>>> e4065ca7bb0ed15b35ab6669ded324ede6d3412e
