@@ -20,4 +20,8 @@
   &:hover {
       text-decoration: underline;
   }
+
+  &:active, &:focus {
+    text-decoration: underline;
+}
 }

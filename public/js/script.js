@@ -64,6 +64,7 @@ $(function () {
 
         if (workCat != cat) {
           $(this).addClass('hidden');
+
         } else {
           $(this).removeClass('hidden');
         }

@@ -423,6 +423,8 @@ body {
   text-decoration: none; }
   .works__nav-link:hover {
     text-decoration: underline; }
+  .works__nav-link:active, .works__nav-link:focus {
+    text-decoration: underline; }
 
 .portfolio {
   display: -webkit-box;
