@@ -431,7 +431,7 @@ body {
 .portfolio__col {
   -ms-flex-preferred-size: 33.33333%;
       flex-basis: 33.33333%;
-  padding: 1rem; }
+  padding: .5rem; }
 
 @media (max-width: 767px) {
   .portfolio__col {
@@ -446,20 +446,50 @@ body {
 .work {
   overflow: hidden;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 4px fade(#000, 25%);
-          box-shadow: 0 0 4px fade(#000, 25%);
-  -webkit-transition: -webkit-box-shadow .2s linear;
-  transition: -webkit-box-shadow .2s linear;
-  transition: box-shadow .2s linear;
-  transition: box-shadow .2s linear, -webkit-box-shadow .2s linear; }
-  .work:hover {
-    -webkit-box-shadow: 0 0 25px fade(#000, 25%);
-            box-shadow: 0 0 25px fade(#000, 25%); }
+  position: relative;
+  background-color: #06517d;
+  background-image: -webkit-gradient(linear, left top, right top, from(#06517d), color-stop(67%, #5bb5c7));
+  background-image: linear-gradient(90deg, #06517d 0%, #5bb5c7 67%);
+  position: relative; }
+
+.work:hover .card__text {
+  opacity: 1;
+  -webkit-transition: opacity .2s linear;
+  transition: opacity .2s linear; }
+
+.work:hover .work__image img {
+  opacity: .5; }
 
 .work__image {
+  background-image: -webkit-gradient(linear, left top, right top, from(#06517d), color-stop(67%, #5bb5c7));
+  background-image: linear-gradient(90deg, #06517d 0%, #5bb5c7 67%);
+  position: relative;
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: -webkit-transform .2s linear;
+  transition: transform .2s linear;
+  transition: transform .2s linear, -webkit-transform .2s linear; }
+
+.work__image img {
   display: block;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  -webkit-transition: opacity .1s linear;
+  transition: opacity .1s linear; }
+
+.card__text {
+  width: 100%;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  -webkit-transform: translate3d(0px, -50px, 0px);
+          transform: translate3d(0px, -50px, 0px); }
 
 .work__content {
   padding: 1rem 0.8rem; }
