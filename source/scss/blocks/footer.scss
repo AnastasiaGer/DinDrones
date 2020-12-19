@@ -1,11 +1,17 @@
 // main: ../style.scss
 
+
 .footer {
   padding: 1rem 0;
 
   background-color: #06517d;
   background-image: linear-gradient(270deg, #06517d 0%, #5bb5c7 67%);
 
+z-index: 100000 !important;
+width: 100%;
+position: absolute;
+bottom: 0;
+left: 0;
 }
 
 .footer__inner {

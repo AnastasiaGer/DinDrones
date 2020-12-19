@@ -7,6 +7,11 @@ html{
   box-sizing: inherit;
 }
 
+#eapps-instagram-feed-1 .eapps-link {
+  display: none !important;
+z-index: -1 !important;
+}
+
 a{
   text-decoration: none;
   color: inherit;
