@@ -117,6 +117,10 @@ body {
   right: 0;
   z-index: 1000;
   padding-top: 10px; }
+  .header--item {
+    background-color: #06517d;
+    background-image: -webkit-gradient(linear, right top, left top, from(#06517d), color-stop(67%, #5bb5c7));
+    background-image: linear-gradient(270deg, #06517d 0%, #5bb5c7 67%); }
 
 .header.fixed {
   background-color: #eb8b8d;
@@ -560,6 +564,17 @@ body {
   .btn--thin {
     min-width: 145px;
     font-size: .8rem; }
+  .btn--sq {
+    min-width: 266px;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    background-color: #000; }
+    .btn--sq:hover {
+      background-color: #a5a3a3;
+      -webkit-box-shadow: 2px 2px 10px fade(#000, 24%);
+              box-shadow: 2px 2px 10px fade(#000, 24%);
+      color: #fff; }
 
 @media (max-width: 991px) {
   .btn {
@@ -800,6 +815,8 @@ body {
   background-color: #06517d;
   background-image: -webkit-gradient(linear, left top, right top, from(#06517d), color-stop(67%, #5bb5c7));
   background-image: linear-gradient(90deg, #06517d 0%, #5bb5c7 67%); }
+  .reviews--item {
+    margin-bottom: 140px; }
 
 .reviews__item {
   width: 100%;
@@ -1004,3 +1021,78 @@ body {
     margin-right: 0;
     margin-bottom: 1rem;
     border-right: 0; } }
+
+.product {
+  background-color: #e6e3e3;
+  padding-top: 5rem; }
+
+.product__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem; }
+
+.product__photo {
+  width: 60%; }
+
+.product__photo {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+.product__info {
+  width: 40%;
+  padding: 2rem; }
+
+.product__info-title {
+  font-size: 27px;
+  margin-bottom: 1rem; }
+
+.product__info-price {
+  font-size: 20px;
+  line-height: 1;
+  color: #dc9814;
+  margin-bottom: 1rem; }
+
+.product__info-text {
+  font-size: 22px;
+  margin-bottom: 1rem; }
+
+.colors {
+  border: 1px solid #000;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.colors__title, .quantity__title {
+  font-size: 14px; }
+
+.quantity {
+  border: 1px solid #000;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.description__col {
+  width: 100%;
+  max-width: 800px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+  color: #777; }
+
+.content__text {
+  font-size: 16px;
+  margin-bottom: 10px; }
+
+.content__list {
+  list-style: square;
+  margin-left: 15px; }

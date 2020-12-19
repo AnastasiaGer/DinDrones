@@ -54,6 +54,20 @@
     font-size: .8rem;
   }
 
+  &--sq{
+    min-width: 266px;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    background-color: #000;
+
+    &:hover {
+      background-color: rgb(165, 163, 163);
+      box-shadow: 2px 2px 10px fade(#000, 24%);
+      color: #fff;
+    }
+  }
+
 }
 
 @media (max-width: $tablet) {
