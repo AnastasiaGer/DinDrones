@@ -16,7 +16,8 @@
 }
 
 .header.fixed {
-  background-color: #eb8b8d;
+  background-color: #06517d;
+    background-image: linear-gradient(270deg, #06517d 0%, #5bb5c7 67%);
   position: fixed;
   top: 0;
   right: 0;
@@ -27,7 +28,8 @@
 }
 
 .header.active {
-  background-color: #eb8b8d;
+  background-color: #06517d;
+    background-image: linear-gradient(270deg, #06517d 0%, #5bb5c7 67%);
 }
 
 
