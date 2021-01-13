@@ -1,16 +1,16 @@
 // main: ../style.less
 
-.shop__inner {
+.information__inner {
   display: flex;
   max-width: 1090px;
 }
 
-.shop__photo,
-.shop__content {
+.information__photo,
+.information__content {
   width: 50%;
 }
 
-.shop__photo {
+.information__photo {
   position: relative;
 
   img {
@@ -31,12 +31,12 @@
   // }
 }
 
-.shop__content {
+.information__content {
   padding-left: 3.2rem;
   margin-top: 2rem;
 }
 
-.shop__title {
+.information__title {
   font-size: 3rem;
   color: #000;
   font-weight: 700;
@@ -44,18 +44,18 @@
   margin-bottom: 1.2rem;
 }
 
-.shop__bigtitle {
+.information__bigtitle {
   margin-bottom: 1.4rem;
   position: relative;
 
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.1;
   color: fade(#000, 15%);
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.shop__text {
+.information__text {
   margin-bottom: 2.8rem;
 
   font-size: .8rem;
@@ -64,21 +64,21 @@
   font-weight: 300;
 }
 
-.shop__social-link {
+.information__social-link {
   padding-left: 10px;
 }
 
 @media (max-width: $tablet) {
-  .shop {
+  .information {
     margin: 4rem 0;
   }
 
-  .shop__photo,
-  .shop__content {
+  .information__photo,
+  .information__content {
     width: 100%;
   }
 
-  .shop__photo {
+  .information__photo {
     order: 2;
 
     // &:before {
@@ -94,7 +94,7 @@
     }
   }
 
-  .shop__content {
+  .information__content {
     order: 1;
     margin-bottom: 2rem;
     padding-left: 0;
@@ -105,7 +105,7 @@
     margin-right: auto;
   }
 
-  .shop__bigtitle {
+  .information__bigtitle {
     position: static;
   }
 }
@@ -122,11 +122,11 @@
 // }
 
 @media (max-width: $mobile) {
-  .shop__title {
+  .information__title {
     font-size: 1rem;
   }
 
-  .shop__bigtitle {
+  .information__bigtitle {
     font-size: 2rem;
   }
 }

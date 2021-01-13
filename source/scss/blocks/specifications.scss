@@ -1,0 +1,27 @@
+// main: ../style.less
+
+.specifications {
+  margin-bottom: 80px;
+
+  &__item {
+    font-size: 20px;
+    line-height: 24px;
+    border-bottom: 1px solid rgba(47, 48, 53, 0.1);
+    padding: 15px 0 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__item-left {
+    padding-right: 15px;
+  }
+
+  &__item-right {
+    width: 460px;
+  }
+
+}
