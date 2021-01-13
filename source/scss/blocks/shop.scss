@@ -1,16 +1,16 @@
 // main: ../style.less
 
-.about__inner {
+.shop__inner {
   display: flex;
   max-width: 1090px;
 }
 
-.about__photo,
-.about__content {
+.shop__photo,
+.shop__content {
   width: 50%;
 }
 
-.about__photo {
+.shop__photo {
   position: relative;
 
   img {
@@ -31,22 +31,22 @@
   // }
 }
 
-.about__content {
+.shop__content {
   padding-left: 3.2rem;
   margin-top: 2rem;
 }
 
-.about__title {
-  font-size: 2rem;
+.shop__title {
+  font-size: 3rem;
   color: #000;
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 1.2rem;
 }
 
-.about__bigtitle {
+.shop__bigtitle {
   margin-bottom: 1.4rem;
   position: relative;
-  left: -10px;
 
   font-size: 3rem;
   line-height: 1.1;
@@ -55,7 +55,7 @@
   text-transform: uppercase;
 }
 
-.about__text {
+.shop__text {
   margin-bottom: 2.8rem;
 
   font-size: .8rem;
@@ -64,21 +64,21 @@
   font-weight: 300;
 }
 
-.about__social-link {
+.shop__social-link {
   padding-left: 10px;
 }
 
 @media (max-width: $tablet) {
-  .about {
+  .shop {
     margin: 4rem 0;
   }
 
-  .about__photo,
-  .about__content {
+  .shop__photo,
+  .shop__content {
     width: 100%;
   }
 
-  .about__photo {
+  .shop__photo {
     order: 2;
 
     // &:before {
@@ -94,7 +94,7 @@
     }
   }
 
-  .about__content {
+  .shop__content {
     order: 1;
     margin-bottom: 2rem;
     padding-left: 0;
@@ -105,7 +105,7 @@
     margin-right: auto;
   }
 
-  .about__bigtitle {
+  .shop__bigtitle {
     position: static;
   }
 }
@@ -122,11 +122,11 @@
 // }
 
 @media (max-width: $mobile) {
-  .about__title {
+  .shop__title {
     font-size: 1rem;
   }
 
-  .about__bigtitle {
+  .shop__bigtitle {
     font-size: 2rem;
   }
 }
