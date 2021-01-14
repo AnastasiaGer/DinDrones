@@ -72,7 +72,7 @@
   <div class="page">
     <section class="product" id="intro">
       <div class="container">
-        <div class="product__wrapper">
+        <div class="product__wrapper" id="buy">
           <div class="product__photo">
             <img src="img/charger.jpg" alt="">
           </div>
@@ -97,6 +97,10 @@
                 </label>
               </div>
 
+              <div class="text-center">
+                <div class="product__info-buy">Payment options</div>
+              </div>
+
               <div id="smart-button-container">
 
                 <div style="text-align: center;">
@@ -107,67 +111,87 @@
 
               </div>
 
-            <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+              <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"
+                data-sdk-integration-source="button-factory"></script>
 
-            <script>
+              <script>
+                function initPayPalButton() {
 
-              function initPayPalButton() {
+                  paypal.Buttons({
 
-                paypal.Buttons({
+                    style: {
 
-                  style: {
+                      shape: 'rect',
 
-                    shape: 'rect',
+                      color: 'silver',
 
-                    color: 'silver',
+                      layout: 'vertical',
 
-                    layout: 'vertical',
-
-                    label: 'pay',
-
-
-
-                  },
+                      label: 'pay',
 
 
 
-                  createOrder: function(data, actions) {
-
-                    return actions.order.create({
-
-                      purchase_units: [{"description":"blah blah ","amount":{"currency_code":"USD","value":600,"breakdown":{"item_total":{"currency_code":"USD","value":550},"shipping":{"currency_code":"USD","value":50},"tax_total":{"currency_code":"USD","value":0}}}}]
-
-                    });
-
-                  },
+                    },
 
 
 
-                  onApprove: function(data, actions) {
+                    createOrder: function (data, actions) {
 
-                    return actions.order.capture().then(function(details) {
+                      return actions.order.create({
 
-                      alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                        purchase_units: [{
+                          "description": "blah blah ",
+                          "amount": {
+                            "currency_code": "USD",
+                            "value": 600,
+                            "breakdown": {
+                              "item_total": {
+                                "currency_code": "USD",
+                                "value": 550
+                              },
+                              "shipping": {
+                                "currency_code": "USD",
+                                "value": 50
+                              },
+                              "tax_total": {
+                                "currency_code": "USD",
+                                "value": 0
+                              }
+                            }
+                          }
+                        }]
 
-                    });
+                      });
 
-                  },
+                    },
 
 
 
-                  onError: function(err) {
+                    onApprove: function (data, actions) {
 
-                    console.log(err);
+                      return actions.order.capture().then(function (details) {
 
-                  }
+                        alert('Transaction completed by ' + details.payer.name.given_name + '!');
 
-                }).render('#paypal-button-container');
+                      });
 
-              }
+                    },
 
-              initPayPalButton();
 
-            </script>
+
+                    onError: function (err) {
+
+                      console.log(err);
+
+                    }
+
+                  }).render('#paypal-button-container');
+
+                }
+
+                initPayPalButton();
+
+              </script>
             </form>
 
           </div>
@@ -197,10 +221,6 @@
         </div>
 
         <div class="information__inner">
-          <div class="information__photo">
-            <img class="img" src="img/item/2.jpg" alt="">
-          </div>
-
           <div class="information__content">
             <h3 class="information__title">DUAL CHARGER</h3>
             <h2 class="information__bigtitle">AC200W / DC500Wx2</h2>
@@ -209,6 +229,10 @@
                 provident ratione quo reiciendis, eligendi aliquid error ab ducimus fugit, quia perferendis
                 id laboriosam animi eos excepturi sint.</p>
             </div>
+          </div>
+
+          <div class="information__photo">
+            <img class="img" src="img/item/2.jpg" alt="">
           </div>
         </div>
 
@@ -238,97 +262,92 @@
         <div class="specifications__inner">
           <h3 class="shop__title">Specifications</h3>
 
-            <div class="specifications__tab-content">
-              <ul class="specifications__list">
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Model No:</div>
-                  <div class="specifications__item-right">PD60</div>
-                </li>
+          <div class="specifications__tab-content">
+            <ul class="specifications__list">
+              <li class="specifications__item">
+                <div class="specifications__item-left">Model No:</div>
+                <div class="specifications__item-right">PD60</div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Input voltage:	 </div>
-                  <div class="specifications__item-right">5~20V</div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Input voltage: </div>
+                <div class="specifications__item-right">5~20V</div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Output voltage:</div>
-                  <div class="specifications__item-right">DC 1~20V</div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Output voltage:</div>
+                <div class="specifications__item-right">DC 1~20V</div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Max. input current:</div>
-                  <div class="specifications__item-right">DC 3A</div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Max. input current:</div>
+                <div class="specifications__item-right">DC 3A</div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Charging current:</div>
-                  <div class="specifications__item-right">1A/2A/3A/6A</div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Charging current:</div>
+                <div class="specifications__item-right">1A/2A/3A/6A</div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Balance current:     </div>
-                  <div class="specifications__item-right">0.5A/Cell Max   </div>
-                </li>
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Supported Quick-charge:     </div>
-                  <div class="specifications__item-right">QC2.0/3.0 PD2.0/3.0
-                    This charger supports fast charge protocol
-                    (But 5V/1A adapter input is not supported)    </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Balance current: </div>
+                <div class="specifications__item-right">0.5A/Cell Max </div>
+              </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Supported Quick-charge: </div>
+                <div class="specifications__item-right">QC2.0/3.0 PD2.0/3.0
+                  This charger supports fast charge protocol
+                  (But 5V/1A adapter input is not supported) </div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Max. charging power:     </div>
-                  <div class="specifications__item-right">60W    </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Max. charging power: </div>
+                <div class="specifications__item-right">60W </div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Abnormal voltage alarm:     </div>
-                  <div class="specifications__item-right">Support    </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Abnormal voltage alarm: </div>
+                <div class="specifications__item-right">Support </div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Incorrect cell count setting alarm:     </div>
-                  <div class="specifications__item-right">Support    </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Incorrect cell count setting alarm: </div>
+                <div class="specifications__item-right">Support </div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Supported battery types and cell count:     </div>
-                  <div class="specifications__item-right">LiFe, LiPo 1~4S, LiHv 1-4S, NiMH, Cd 1-12S   </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Supported battery types and cell count: </div>
+                <div class="specifications__item-right">LiFe, LiPo 1~4S, LiHv 1-4S, NiMH, Cd 1-12S </div>
+              </li>
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Working temperature:	     </div>
-                  <div class="specifications__item-right">0~40℃    </div>
-                </li>
-
-
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Storage temperature:     </div>
-                  <div class="specifications__item-right"> -20℃~60℃   </div>
-                </li>
-
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Dimension:     </div>
-                  <div class="specifications__item-right">56×85×21mm    </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Working temperature: </div>
+                <div class="specifications__item-right">0~40℃ </div>
+              </li>
 
 
-                <li class="specifications__item">
-                  <div class="specifications__item-left">Weight:     </div>
-                  <div class="specifications__item-right"> About 87g   </div>
-                </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Storage temperature: </div>
+                <div class="specifications__item-right"> -20℃~60℃ </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Dimension: </div>
+                <div class="specifications__item-right">56×85×21mm </div>
+              </li>
 
 
+              <li class="specifications__item">
+                <div class="specifications__item-left">Weight: </div>
+                <div class="specifications__item-right"> About 87g </div>
+              </li>
 
+            </ul>
 
-
-
-              </ul>
-
-              <div class="text-center">
-                <a class="btn  btn--sq" href="#">Buy</a>
-              </div>
+            <div class="text-center">
+              <div class="product__info-buy product__info-buy--md" data-scroll="#buy">Buy</div>
             </div>
+          </div>
 
         </div>
       </div>
