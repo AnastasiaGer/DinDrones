@@ -17,8 +17,10 @@ $(function () {
 
     if (scrollOffset >= introH) {
       header.addClass("fixed");
+      header.css("color", "white");
     } else {
       header.removeClass("fixed");
+      header.css("color", "black");
     }
 
   }
