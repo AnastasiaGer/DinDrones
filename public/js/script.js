@@ -3,6 +3,8 @@ $(function () {
   var introH = $("#intro").innerHeight();
   var scrollOffset = $(window).scrollTop();
 
+  var header = $("#header");
+
   // Fixed Header
 
   checkScroll(scrollOffset);
