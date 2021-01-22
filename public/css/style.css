@@ -328,6 +328,7 @@ body {
   height: auto; }
 
 .intro__content {
+  width: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,9 +341,9 @@ body {
           justify-content: center;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 150px;
   z-index: 3;
-  padding-left: 58rem;
+  padding-left: 0;
   padding-right: 4rem;
   padding-top: 20vw; }
 
@@ -1103,7 +1104,7 @@ body {
 .product__photo {
   width: 60%; }
 
-.product__photo {
+.product__photo img {
   width: 100%;
   height: auto;
   display: block; }

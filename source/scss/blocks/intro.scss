@@ -25,14 +25,15 @@
 }
 
 .intro__content{
+  width: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 150px;
   z-index: 3;
-  padding-left: 58rem;
+  padding-left: 0;
   padding-right: 4rem;
   padding-top: 20vw;
 }
