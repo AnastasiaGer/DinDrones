@@ -337,7 +337,9 @@ body {
   position: absolute;
   top: 250px;
   right: 0;
-  z-index: 3; }
+  z-index: 3;
+  padding-left: 4rem;
+  padding-right: 4rem; }
 
 .intro__title {
   font-size: 4rem;
