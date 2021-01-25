@@ -1,5 +1,11 @@
 // main: ../style.less
 
+.shop__container{
+  display: flex;
+  justify-content: space-between;
+
+}
+
 .shop__inner {
   display: flex;
   max-width: 1090px;
@@ -37,18 +43,18 @@
 }
 
 .shop__title {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #000;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 1.2rem;
 }
 
-.shop__bigtitle {
-  margin-bottom: 1.4rem;
+.shop__subtitle {
+  margin-bottom: 1rem;
   position: relative;
 
-  font-size: 2rem;
+  font-size: 1rem;
   line-height: 1.1;
   color: fade(#000, 15%);
   font-weight: 700;
