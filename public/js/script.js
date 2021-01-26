@@ -5,6 +5,15 @@ $(function () {
 
   var header = $("#header");
 
+// Slider
+  $('.product-slider').slick({
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="../img/arrow-black-left.svg" alt=""></button>',
+    nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="../img/arrow-black-right.svg" alt=""></button>',
+  });
+
   // Fixed Header
 
   checkScroll(scrollOffset);

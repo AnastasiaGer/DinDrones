@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="css/slick.css">
 </head>
 
 <body>
@@ -73,8 +73,16 @@
     <section class="product" id="intro">
       <div class="container">
         <div class="product__wrapper" id="buy">
-          <div class="product__photo">
-            <img src="img/items/screw/image001.jpg" alt="">
+          <div class="product-slider">
+            <div class="product__photo">
+              <img src="img/items/screw/image001.jpg" alt="">
+            </div>
+            <div class="product__photo">
+              <img src="img/items/screw/image002.jpg" alt="">
+            </div>
+            <div class="product__photo">
+              <img src="img/items/screw/image003.jpg" alt="">
+            </div>
           </div>
           <div class="product__info">
             <h3 class="product__info-title">Gemfan Hurricane MCK 51466-3</h3>
@@ -197,7 +205,7 @@
       </div>
     </section>
 
-    <section class="specifications">
+    <section class="specifications section">
       <div class="container">
 
         <div class="specifications__inner">
@@ -241,28 +249,15 @@
 
               <li class="specifications__item">
                 <div class="specifications__item-left">Colors: </div>
-                <div class="specifications__item-right">Lemon Yellow, Pink, Clear Blue, Clear, Clear Gray, Clear Red, Green </div>
+                <div class="specifications__item-right">Lemon Yellow, Pink, Clear Blue, Clear, Clear Gray, Clear Red,
+                  Green </div>
               </li>
 
             </ul>
           </div>
 
         </div>
-      </div>
-    </section>
 
-    <section class="information section">
-      <div class="container">
-
-        <div class="information__inner">
-          <div class="information__photo">
-            <img class="img" src="img/items/screw/image002.jpg" alt="">
-          </div>
-          <div class="information__photo">
-            <img class="img" src="img/items/screw/image003.jpg" alt="">
-          </div>
-
-        </div>
         <div class="text-center">
           <div class="product__info-buy product__info-buy--md" data-scroll="#buy">Buy</div>
         </div>
@@ -278,8 +273,6 @@
             <div class="footer__copyright">
               &copy; 2020 germanova.site
             </div>
-
-
 
             <div class="footer__social">
               <a class="footer__social-link" href="https://www.instagram.com/din_fpv/" target="_blank">
@@ -313,8 +306,8 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <script src="js/slick.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 
