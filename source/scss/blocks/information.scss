@@ -2,13 +2,12 @@
 
 .information__inner {
   display: flex;
-  max-width: 1090px;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
-.information__photo,
-.information__content {
-  width: 50%;
+.information__photo {
+  width: 100%;
 }
 
 .information__photo {
