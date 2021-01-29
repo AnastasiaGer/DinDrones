@@ -917,19 +917,41 @@ body {
   width: 100%;
   text-align: center; }
 
+.reviews__item {
+  position: relative;
+  display: block;
+  cursor: pointer; }
+
 .reviews__photo {
   display: block;
   margin: 0 auto 0.6rem;
-  width: 103px;
-  height: 103px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 4px solid #EFEFEF; }
+  border: 4px solid #EFEFEF;
+  opacity: 1;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
 
-.reviews__name {
-  margin-bottom: .3rem;
-  font-size: 1.06rem;
-  color: #fff;
-  font-weight: 700; }
+.middle {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center; }
+
+.reviews__item:hover .reviews__photo {
+  opacity: 0.3; }
+
+.reviews__item:hover .middle {
+  opacity: 1; }
 
 .reviews__company {
   margin-bottom: .4rem;
