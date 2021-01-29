@@ -6,7 +6,13 @@ $(function () {
   var header = $("#header");
 
 // Fancybox
-  $('[data-fancybox="preview"]').fancybox({
+  $('[data-fancybox="rew1"]').fancybox({
+    thumbs : {
+      autoStart : true
+    }
+  });
+
+  $('[data-fancybox="rew3"]').fancybox({
     thumbs : {
       autoStart : true
     }
