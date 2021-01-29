@@ -5,6 +5,13 @@ $(function () {
 
   var header = $("#header");
 
+// Fancybox
+  $('[data-fancybox="preview"]').fancybox({
+    thumbs : {
+      autoStart : true
+    }
+  });
+
 // Slider
   $('.product-slider').slick({
     dots: true,
