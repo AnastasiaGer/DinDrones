@@ -10,16 +10,16 @@ $(function () {
     dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="../img/arrow-black-left.svg" alt=""></button>',
-    nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="../img/arrow-black-right.svg" alt=""></button>',
+    prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="../img/arrow-black-left-prod.svg" alt=""></button>',
+    nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="../img/arrow-black-right-prod.svg" alt=""></button>',
   });
 
   // Slider
   $('.reviews-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnprev" style="color:white;"><img src="../img/arrow-black-left.svg" alt=""></button>',
-    nextArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnnext"><img src="../img/arrow-black-right.svg" alt="" style="color:white;"></button>',
+    prevArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnprev"><img src="../img/arrow-black-left-rew.svg" alt=""></button>',
+    nextArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnnext"><img src="../img/arrow-black-right-rew.svg" alt=""></button>',
   });
 
   // Fixed Header
