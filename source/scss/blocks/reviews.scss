@@ -9,9 +9,49 @@
   margin-bottom: 140px;
 }
 
-.reviews__item {
+.reviews-slider {
   width: 100%;
-  max-width: 830px;
+  &__slider-btnprev {
+    left: -50px;
+    fill: #fff;
+  }
+
+  &__slider-btnnext {
+    right: -50px;
+    fill: #fff;
+  }
+}
+
+
+.reviews-slider .slick-dots {
+  bottom: -60px;
+}
+
+.reviews-slider .slick-dots button {
+  background-color: #fff;
+  height: 14px;
+  width: 14px;
+}
+
+.reviews-slider .slick-dots .slick-active button,
+.reviews-slider .slick-dots .slick-active button:active {
+  background-color: #fff;
+  border: .5px solid #06517d;
+}
+
+.reviews-slider__slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.reviews__item {
   margin: 0 auto;
 }
 

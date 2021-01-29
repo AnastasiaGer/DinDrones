@@ -885,9 +885,41 @@ body {
   background-image: linear-gradient(90deg, #06517d 0%, #5bb5c7 67%);
   margin-bottom: 140px; }
 
+.reviews-slider {
+  width: 100%; }
+  .reviews-slider__slider-btnprev {
+    left: -50px;
+    fill: #fff; }
+  .reviews-slider__slider-btnnext {
+    right: -50px;
+    fill: #fff; }
+
+.reviews-slider .slick-dots {
+  bottom: -60px; }
+
+.reviews-slider .slick-dots button {
+  background-color: #fff;
+  height: 14px;
+  width: 14px; }
+
+.reviews-slider .slick-dots .slick-active button,
+.reviews-slider .slick-dots .slick-active button:active {
+  background-color: #fff;
+  border: .5px solid #06517d; }
+
+.reviews-slider__slider-btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+  cursor: pointer; }
+
 .reviews__item {
-  width: 100%;
-  max-width: 830px;
   margin: 0 auto; }
 
 .reviews__text {

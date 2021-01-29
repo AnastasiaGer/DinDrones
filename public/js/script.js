@@ -14,6 +14,14 @@ $(function () {
     nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="../img/arrow-black-right.svg" alt=""></button>',
   });
 
+  // Slider
+  $('.reviews-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnprev" style="color:white;"><img src="../img/arrow-black-left.svg" alt=""></button>',
+    nextArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnnext"><img src="../img/arrow-black-right.svg" alt="" style="color:white;"></button>',
+  });
+
   // Fixed Header
 
   checkScroll(scrollOffset);
