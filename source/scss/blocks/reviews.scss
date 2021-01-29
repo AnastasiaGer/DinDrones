@@ -1,7 +1,7 @@
 // main: ../style.scss
 
 .reviews {
-  padding: 4.6rem 0;
+  padding: 2rem 0;
   position: relative;
 
   background-color: #06517d;
@@ -13,31 +13,13 @@
   width: 100%;
   &__slider-btnprev {
     left: -50px;
-    fill: #fff;
   }
 
   &__slider-btnnext {
     right: -50px;
-    fill: #fff;
   }
 }
 
-
-.reviews-slider .slick-dots {
-  bottom: -60px;
-}
-
-.reviews-slider .slick-dots button {
-  background-color: #fff;
-  height: 14px;
-  width: 14px;
-}
-
-.reviews-slider .slick-dots .slick-active button,
-.reviews-slider .slick-dots .slick-active button:active {
-  background-color: #fff;
-  border: .5px solid #06517d;
-}
 
 .reviews-slider__slider-btn {
   position: absolute;
@@ -49,6 +31,7 @@
   margin: 0;
   z-index: 5;
   cursor: pointer;
+  fill: #fff;
 }
 
 .reviews__item {
@@ -64,14 +47,7 @@
 
 .reviews__author {
   width: 100%;
-  margin-top: -51px;
-
   text-align: center;
-
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1;
 }
 
 .reviews__photo {
@@ -88,7 +64,7 @@
   margin-bottom: .3rem;
 
   font-size: 1.06rem;
-  color: #000;
+  color: #fff;
   font-weight: 700;
 }
 
