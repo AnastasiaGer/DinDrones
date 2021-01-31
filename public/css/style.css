@@ -436,27 +436,37 @@ body {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  padding: 0 25px; }
 
 .shop__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1090px; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.shop__photo img {
+  display: block;
+  width: 100%;
+  height: auto; }
 
 .shop__photo,
 .shop__content {
   width: 50%; }
 
-.shop__photo {
-  position: relative; }
-  .shop__photo img {
-    position: relative;
-    z-index: 2; }
-
 .shop__content {
-  padding-left: 3.2rem;
-  margin-top: 2rem; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .shop__title {
   font-size: 2rem;
@@ -486,17 +496,17 @@ body {
 
 @media (max-width: 1110px) {
   .shop {
-    margin: 4rem 0; }
+    margin: 0; }
+  .shop__container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .shop__photo,
   .shop__content {
     width: 100%; }
-  .shop__photo {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2; }
-    .shop__photo img {
-      position: relative;
-      margin: 0 auto; }
+  .shop__inner {
+    margin-bottom: 6rem; }
+  .shop__inner:last-child {
+    margin-bottom: 0; }
   .shop__content {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -506,15 +516,11 @@ body {
     text-align: center;
     max-width: 600px;
     margin-left: auto;
-    margin-right: auto; }
-  .shop__bigtitle {
-    position: static; } }
+    margin-right: auto; } }
 
 @media (max-width: 770px) {
   .shop__title {
-    font-size: 1rem; }
-  .shop__bigtitle {
-    font-size: 2rem; } }
+    font-size: 1rem; } }
 
 .works {
   margin: 2.8rem 0; }
