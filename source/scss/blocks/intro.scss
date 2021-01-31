@@ -1,35 +1,20 @@
 // main: ../style.scss
 .intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-  height: 100vh;
-  min-height: 820px;
-  max-height: 100vh;
   background-color: rgb(249, 249, 249);
-  background-image: url('../../img/items/charger/1.png');
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: relative;
-
-
   overflow: hidden;
-
 }
 
-.intro__inner {
+.intro__wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px 0 50px;
+  position: relative;
+}
+
+.intro__photo img {
+  display: block;
   width: 100%;
-  max-width: 570px;
-  margin: 0 auto;
-  text-align: left;
-  position: absolute;
-  top: 165px;
-  right: 0;
-  z-index: 3;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  height: auto;
 }
 
 // .video{
@@ -60,8 +45,14 @@
 //   padding-top: 20vw;
 // }
 
+.intro__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .intro__title {
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
@@ -70,6 +61,10 @@
   position: relative;
   margin: 0;
   margin-bottom: 50px;
+}
+
+.btn-inner {
+  max-width: 180px;
 }
 
 // .intro__title:after {
@@ -90,14 +85,17 @@
   margin-bottom: 50px;
 }
 
-@media (max-width: $tablet) {
-  .intro__content {
-    padding-left: 48rem;
-    padding-right: 4rem;
-  }
+@media (max-width: $desktop) {}
 
+@media (max-width: $tablet) {
   .intro__title {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .intro__title {
+    font-size: 2.5rem;
   }
 
   .intro__text {
@@ -106,13 +104,23 @@
 }
 
 @media (max-width: $mobile) {
-  .intro {
-    min-height: 650px;
-  }
-}
+  .intro__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
 
-@media (max-width: $mobile-sm) {
+  }
+
+  .intro__inner {
+    padding: 0 20px;
+    align-items: center;
+  }
+
   .intro__title {
     font-size: 2rem;
+  }
+
+  .intro__text {
+    font-size: 0.8rem;
   }
 }
