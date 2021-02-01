@@ -147,6 +147,7 @@
 
   &--md {
     cursor: pointer;
+    width: 200px;
   }
 }
 
@@ -192,6 +193,18 @@
 
 
 @media (max-width: $tablet-sm) {
+
+  .product-slider {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    &__slider-btnprev {
+      display: none !important;
+    }
+
+    &__slider-btnnext {
+      display: none !important;
+    }
+  }
 
   .product__info-text {
     font-size: 18px;

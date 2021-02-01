@@ -1285,7 +1285,8 @@ body {
   transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, border-color .2s linear, -webkit-box-shadow .2s linear;
   margin-bottom: 20px; }
   .product__info-buy--md {
-    cursor: pointer; }
+    cursor: pointer;
+    width: 200px; }
 
 .colors {
   border: 1px solid #000;
@@ -1329,6 +1330,13 @@ body {
   margin-left: 15px; }
 
 @media (max-width: 990px) {
+  .product-slider {
+    margin: 0 auto;
+    margin-bottom: 40px; }
+    .product-slider__slider-btnprev {
+      display: none !important; }
+    .product-slider__slider-btnnext {
+      display: none !important; }
   .product__info-text {
     font-size: 18px; } }
 
