@@ -809,10 +809,15 @@ body {
     position: static; } }
 
 @media (max-width: 770px) {
+  .about__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .about__title {
     font-size: 1rem; }
   .about__bigtitle {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  .about__text {
+    font-size: .8rem; } }
 
 .articles {
   display: -webkit-box;
@@ -904,22 +909,22 @@ body {
 
 .reviews-slider {
   width: 100%; }
-  .reviews-slider__slider-btnprev {
-    left: -50px; }
-  .reviews-slider__slider-btnnext {
-    right: -50px; }
 
 .reviews-slider__slider-btn {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  z-index: 5;
-  cursor: pointer; }
+  display: none; }
+
+.reviews-slider .slick-dots {
+  bottom: -20px; }
+
+.reviews-slider .slick-dots button {
+  background-color: #C4C4C4;
+  height: 14px;
+  width: 14px; }
+
+.reviews-slider .slick-dots .slick-active button,
+.reviews-slider .slick-dots .slick-active button:active {
+  background-color: #fff;
+  border: .5px solid #06517d; }
 
 .reviews__item {
   margin: 0 auto; }
@@ -1073,13 +1078,18 @@ body {
   color: #fff;
   border-right: 1px solid fade(#000, 35%); }
 
+.footer__llc {
+  font-size: .94rem;
+  color: #fff; }
+
 .footer__social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  margin-right: 1rem; }
   .footer__social a {
     margin-right: 1.2rem;
     text-decoration: none; }
@@ -1120,7 +1130,7 @@ body {
   .footer__social a {
     margin: 0 .5rem; }
   .footer__nav {
-    width: 100%;
+    width: 50%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -1129,16 +1139,27 @@ body {
   .footer__nav-link {
     margin: 0 .5rem .5rem; } }
 
-@media (max-width: 575px) {
+@media (max-width: 770px) {
+  .footer__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
   .footer__credits {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column; }
-  .footer__copyright {
+  .footer__llc {
+    font-size: .7rem; }
+  .footer__copyright,
+  .footer__social,
+  .footer__llc {
     margin-right: 0;
     margin-bottom: 1rem;
-    border-right: 0; } }
+    border-right: 0; }
+  .footer__nav {
+    width: 100%; } }
 
 .product {
   padding-top: 5rem; }
