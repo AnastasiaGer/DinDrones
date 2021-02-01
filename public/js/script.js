@@ -32,8 +32,8 @@ $(function () {
     dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // prevArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnprev"><img src="../img/arrow-black-left-rew.svg" alt=""></button>',
-    // nextArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnnext"><img src="../img/arrow-black-right-rew.svg" alt=""></button>',
+    prevArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnprev"><img src="../img/arrow-black-left-rew.svg" alt=""></button>',
+    nextArrow: '<button class="reviews-slider__slider-btn reviews-slider__slider-btnnext"><img src="../img/arrow-black-right-rew.svg" alt=""></button>',
   });
 
   // Fixed Header

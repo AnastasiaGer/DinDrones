@@ -909,6 +909,10 @@ body {
 
 .reviews-slider {
   width: 100%; }
+  .reviews-slider__slider-btnprev {
+    display: none !important; }
+  .reviews-slider__slider-btnnext {
+    display: none !important; }
 
 .reviews-slider__slider-btn {
   display: none; }

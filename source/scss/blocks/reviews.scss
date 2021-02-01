@@ -11,7 +11,16 @@
 
 .reviews-slider {
   width: 100%;
+
+  &__slider-btnprev {
+    display: none !important;
+  }
+
+  &__slider-btnnext {
+    display: none !important;
+  }
 }
+
 
 .reviews-slider__slider-btn {
   display: none;
