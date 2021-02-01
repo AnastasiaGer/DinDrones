@@ -124,10 +124,10 @@
 
 .product__info-buy {
   display: inline-block;
+  width: 100%;
   vertical-align: top;
   padding: 1.05em 1.7em;
 
-  min-width: 390px;
   border-radius: 0;
   border: none;
   color: #fff;
@@ -188,4 +188,24 @@
 .content__list {
   list-style: square;
   margin-left: 15px;
+}
+
+
+@media (max-width: $tablet-sm) {
+
+  .product__info-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: $mobile) {
+
+  .product__wrapper {
+    flex-wrap: wrap;
+
+  }
+
+  .product__info {
+    width: 100%;
+  }
 }
