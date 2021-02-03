@@ -9,6 +9,7 @@
 .shop__inner {
   display: flex;
   justify-content: space-between;
+  width: 33.33%;
 }
 
 .shop__photo img {
@@ -69,10 +70,14 @@
     flex-wrap: wrap;
   }
 
-  .shop__photo,
-  .shop__content {
-    width: 100%;
+  .shop__title {
+    font-size: 1rem;
   }
+
+  // .shop__photo,
+  // .shop__content {
+  //   width: 100%;
+  // }
 
   .shop__inner{
     margin-bottom: 6rem;

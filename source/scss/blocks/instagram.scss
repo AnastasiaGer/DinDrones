@@ -3,6 +3,7 @@
 .instagram {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 .instagram__item {
@@ -38,7 +39,17 @@
 
   opacity: 0;
   transition: opacity 0.2s linear;
+
+  img{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+  }
 }
+
+
 
 .instagram__item:hover .instagram__content {
   opacity: 1;

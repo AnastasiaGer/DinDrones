@@ -445,7 +445,8 @@ body {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  width: 33.33%; }
 
 .shop__photo img {
   display: block;
@@ -500,9 +501,8 @@ body {
   .shop__container {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-  .shop__photo,
-  .shop__content {
-    width: 100%; }
+  .shop__title {
+    font-size: 1rem; }
   .shop__inner {
     margin-bottom: 6rem; }
   .shop__inner:last-child {
@@ -742,15 +742,25 @@ body {
   display: flex;
   max-width: 1090px; }
 
-.about__photo,
+.about__photo {
+  width: 30%; }
+
 .about__content {
-  width: 50%; }
+  width: 70%; }
 
 .about__photo {
-  position: relative; }
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
   .about__photo img {
-    position: relative;
-    z-index: 2; }
+    display: block;
+    width: 100%;
+    height: auto; }
 
 .about__content {
   padding-left: 3.2rem;
@@ -762,6 +772,15 @@ body {
   line-height: 2;
   color: #000;
   font-weight: 300; }
+
+.about__link {
+  margin-bottom: 2.8rem;
+  text-decoration: underline;
+  font-size: 1rem;
+  line-height: 2;
+  color: red;
+  font-style: uppercase;
+  font-weight: 700; }
 
 .about__logo img {
   width: 100%;
@@ -980,7 +999,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  margin-bottom: 50px; }
 
 .instagram__item {
   width: 25%;
@@ -1020,6 +1040,12 @@ body {
   opacity: 0;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear; }
+  .instagram__content img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 45%;
+    top: 45%; }
 
 .instagram__item:hover .instagram__content {
   opacity: 1; }
