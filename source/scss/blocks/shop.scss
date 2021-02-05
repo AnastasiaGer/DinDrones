@@ -1,15 +1,21 @@
 // main: ../style.less
 
+.shop{
+  margin-bottom: -80px;
+}
+
 .shop__container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0 25px;
 }
 
 .shop__inner {
   display: flex;
   justify-content: space-between;
-  width: 33.33%;
+  width: 50%;
+  margin-bottom: 150px;
 }
 
 .shop__photo img {
@@ -80,7 +86,10 @@
   // }
 
   .shop__inner{
-    margin-bottom: 6rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgb(204, 203, 203);
   }
 
   .shop__inner:last-child{

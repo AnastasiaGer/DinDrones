@@ -430,6 +430,9 @@ body {
 .social__link:hover .social__icon {
   fill: #fff; }
 
+.shop {
+  margin-bottom: -80px; }
+
 .shop__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -437,6 +440,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0 25px; }
 
 .shop__inner {
@@ -446,7 +451,8 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 33.33%; }
+  width: 50%;
+  margin-bottom: 150px; }
 
 .shop__photo img {
   display: block;
@@ -504,7 +510,10 @@ body {
   .shop__title {
     font-size: 1rem; }
   .shop__inner {
-    margin-bottom: 6rem; }
+    width: 100%;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #cccbcb; }
   .shop__inner:last-child {
     margin-bottom: 0; }
   .shop__content {
