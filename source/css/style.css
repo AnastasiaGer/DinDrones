@@ -737,10 +737,9 @@ body {
   max-width: 100%;
   height: auto; }
   .logos__img--sheep {
-    background-color: #000;
+    background-color: white;
     width: 200px;
-    height: 120px;
-    margin-top: 30px; }
+    height: 145px; }
 
 /* ----------------- */
 /* 575px */
