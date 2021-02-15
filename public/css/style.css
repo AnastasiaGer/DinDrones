@@ -904,7 +904,8 @@ body {
 
 .blog__text {
   color: #000;
-  font-size: 20px; }
+  font-size: 20px;
+  margin-bottom: 15px; }
 
 .blog__title a:hover {
   text-decoration: underline; }
