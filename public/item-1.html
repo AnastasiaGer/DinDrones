@@ -96,81 +96,13 @@
                 </label>
               </div> -->
 
-              <div class="text-center">
-                <div class="product__info-buy">Payment options</div>
-              </div>
+              <br>
 
-              <div id="smart-button-container">
 
-                <div style="text-align: center;">
-
-                  <div id="paypal-button-container"></div>
-
-                </div>
+              <div class="product__info-text" style="color: #06517d">
+                This product is on backorder, please email me at: <b style="text-decoration: underline">din@dindrones.com</b> with your order details.
 
               </div>
-
-            <script src="https://www.paypal.com/sdk/js?client-id=AW8mY-MRUUUvkEgM7z-MzAFIuJXsLHEyndeWqjRuqnSPfZ5z7zJ2TrnS7qtS_SoJUfqelotmdiv7mxRh&currency=USD" data-sdk-integration-source="button-factory"></script>
-
-            <script>
-
-              function initPayPalButton() {
-
-                paypal.Buttons({
-
-                  style: {
-
-                    shape: 'rect',
-
-                    color: 'silver',
-
-                    layout: 'vertical',
-
-                    label: 'pay',
-
-
-
-                  },
-
-
-
-                  createOrder: function(data, actions) {
-
-                    return actions.order.create({
-
-                      purchase_units: [{"description":"Din Box 72 cell","amount":{"currency_code":"USD","value":643.5,"breakdown":{"item_total":{"currency_code":"USD","value":600},"shipping":{"currency_code":"USD","value":0},"tax_total":{"currency_code":"USD","value":43.5}}}}]
-
-                    });
-
-                  },
-
-
-
-                  onApprove: function(data, actions) {
-
-                    return actions.order.capture().then(function(details) {
-
-                      alert('Transaction completed by ' + details.payer.name.given_name + '!');
-
-                    });
-
-                  },
-
-
-
-                  onError: function(err) {
-
-                    console.log(err);
-
-                  }
-
-                }).render('#paypal-button-container');
-
-              }
-
-              initPayPalButton();
-
-            </script>
             </form>
 
           </div>
