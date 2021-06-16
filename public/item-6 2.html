@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DinDrones</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
+
+  </head>
+
+<body>
+  <!-- SVG symbols -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="fb" aria-hidden="true" focusable="false"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
+      <path d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z" />
+    </symbol>
+
+    <symbol id="ig" aria-hidden="true" focusable="false"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path
+        d="M16 0c-4.349 0-4.891.021-6.593.093c-1.709.084-2.865.349-3.885.745a7.847 7.847 0 0 0-2.833 1.849A7.757 7.757 0 0 0 .84 5.52C.444 6.54.179 7.696.095 9.405c-.077 1.703-.093 2.244-.093 6.593s.021 4.891.093 6.593c.084 1.704.349 2.865.745 3.885a7.847 7.847 0 0 0 1.849 2.833a7.757 7.757 0 0 0 2.833 1.849c1.02.391 2.181.661 3.885.745c1.703.077 2.244.093 6.593.093s4.891-.021 6.593-.093c1.704-.084 2.865-.355 3.885-.745a7.847 7.847 0 0 0 2.833-1.849a7.716 7.716 0 0 0 1.849-2.833c.391-1.02.661-2.181.745-3.885c.077-1.703.093-2.244.093-6.593s-.021-4.891-.093-6.593c-.084-1.704-.355-2.871-.745-3.885a7.847 7.847 0 0 0-1.849-2.833A7.716 7.716 0 0 0 26.478.838c-1.02-.396-2.181-.661-3.885-.745C20.89.016 20.349 0 16 0zm0 2.88c4.271 0 4.781.021 6.469.093c1.557.073 2.405.333 2.968.553a4.989 4.989 0 0 1 1.844 1.197a4.931 4.931 0 0 1 1.192 1.839c.22.563.48 1.411.553 2.968c.072 1.688.093 2.199.093 6.469s-.021 4.781-.099 6.469c-.084 1.557-.344 2.405-.563 2.968c-.303.751-.641 1.276-1.199 1.844a5.048 5.048 0 0 1-1.844 1.192c-.556.22-1.416.48-2.979.553c-1.697.072-2.197.093-6.479.093s-4.781-.021-6.48-.099c-1.557-.084-2.416-.344-2.979-.563c-.76-.303-1.281-.641-1.839-1.199c-.563-.563-.921-1.099-1.197-1.844c-.224-.556-.48-1.416-.563-2.979c-.057-1.677-.084-2.197-.084-6.459c0-4.26.027-4.781.084-6.479c.083-1.563.339-2.421.563-2.979c.276-.761.635-1.281 1.197-1.844c.557-.557 1.079-.917 1.839-1.199c.563-.219 1.401-.479 2.964-.557c1.697-.061 2.197-.083 6.473-.083zm0 4.907A8.21 8.21 0 0 0 7.787 16A8.21 8.21 0 0 0 16 24.213A8.21 8.21 0 0 0 24.213 16A8.21 8.21 0 0 0 16 7.787zm0 13.546c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333S18.948 21.333 16 21.333zM26.464 7.459a1.923 1.923 0 0 1-1.923 1.921a1.919 1.919 0 1 1 0-3.838c1.057 0 1.923.86 1.923 1.917z" />
+    </symbol>
+
+    <symbol id="whatsup" aria-hidden="true" focusable="false" width="35" height="35"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path
+        d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.166 13.166 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.058 13.058 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.13 16.13 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z" />
+    </symbol>
+  </svg>
+  <!-- SVG symbols END -->
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <a href="index.html">
+          <div class="header__logo">
+            DinDrones
+          </div>
+        </a>
+
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="index.html">Shop</a>
+            </li>
+            <li>
+              <a class="nav__link" href="index.html">About</a>
+            </li>
+            <li>
+              <a class="nav__link" href="index.html">Blog</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="nav-toggle" id="nav_toggle" type="button">
+          <span class="nav-toggle__item">Menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+  <div class="page">
+    <section class="product" id="intro">
+      <div class="container">
+        <div class="product__wrapper" id="buy">
+
+          <div class="product-slider">
+            <div class="product__photo">
+              <img src="img/items/xrotor/xrotor-1.jpg" alt="">
+            </div>
+            <div class="product__photo">
+              <img src="img/items/xrotor/xrotor-2.jpg" alt="">
+            </div>
+            <div class="product__photo">
+              <img src="img/items/xrotor/xrotor-3.jpg" alt="">
+            </div>
+          </div>
+
+
+
+
+          <div class="product__info">
+            <h3 class="product__info-title">XRotor 40A 4in1 (20x20) BLHeli-32 DShot1200 for FPV Pilots</h3>
+            <div class="product__info-price"> 44.99 $</div>
+            <div class="product__info-text">High performance 32-bit microprocessor with the running frequency of up to 48MHz for excellent performance. BLHeli_32 firmware is the third generation BLHeli, following base BLHeli and BLHeli-S.</div>
+            <form action="" class="product__info-options">
+              <!-- <div class="colors">
+                <div class="colors__title">Colors</div>
+                <label for="">
+                  <input data-tab="#tab_1" type="radio" name="color"> Red
+                </label>
+                <label for="">
+                  <input data-tab="#tab_2" type="radio" name="color"> Blue
+                </label>
+                <label for="">
+                  <input data-tab="#tab_3" type="radio" name="color"> Black
+                </label>
+              </div> -->
+
+              <div class="text-center">
+                <div class="product__info-buy">Payment options</div>
+              </div>
+
+              <div id="smart-button-container">
+
+                <div style="text-align: center;">
+
+                  <div id="paypal-button-container"></div>
+
+                </div>
+
+              </div>
+
+            <script src="https://www.paypal.com/sdk/js?client-id=AW8mY-MRUUUvkEgM7z-MzAFIuJXsLHEyndeWqjRuqnSPfZ5z7zJ2TrnS7qtS_SoJUfqelotmdiv7mxRh&currency=USD" data-sdk-integration-source="button-factory"></script>
+
+            <script>
+
+              function initPayPalButton() {
+
+                paypal.Buttons({
+
+                  style: {
+
+                    shape: 'rect',
+
+                    color: 'silver',
+
+                    layout: 'vertical',
+
+                    label: 'pay',
+
+
+
+                  },
+
+
+
+                  createOrder: function(data, actions) {
+
+                    return actions.order.create({
+
+                      purchase_units: [{"description":"BrotherHobby – GOM 2207.5 Motor","amount":{"currency_code":"USD","value":48.26,"breakdown":{"item_total":{"currency_code":"USD","value":44.99},"shipping":{"currency_code":"USD","value":0},"tax_total":{"currency_code":"USD","value":3.27}}}}]
+
+                    });
+
+                  },
+
+
+
+                  onApprove: function(data, actions) {
+
+                    return actions.order.capture().then(function(details) {
+
+                      alert('Transaction completed by ' + details.payer.name.given_name + '!');
+
+                    });
+
+                  },
+
+
+
+                  onError: function(err) {
+
+                    console.log(err);
+
+                  }
+
+                }).render('#paypal-button-container');
+
+              }
+
+              initPayPalButton();
+
+            </script>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="specifications section">
+      <div class="container">
+
+        <div class="specifications__inner">
+          <h3 class="specifications__title">Specifications</h3>
+
+          <div class="specifications__tab-content">
+            <ul class="specifications__list">
+              <li class="specifications__item">
+                <div class="specifications__item-left">Application:</div>
+                <div class="specifications__item-right">FPVs with 130-280mm Diagonal Wheelbase</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">LiPo Power input: </div>
+                <div class="specifications__item-right">3S-6S</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Cont.Current:</div>
+                <div class="specifications__item-right">40Ax4</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Burst Current:</div>
+                <div class="specifications__item-right">60Ax4</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">BEC Output:</div>
+                <div class="specifications__item-right">NO</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Input wires: </div>
+                <div class="specifications__item-right">Red-14AWG-100mm/ Black-14AWG-100mm</div>
+              </li>
+              <li class="specifications__item">
+                <div class="specifications__item-left">Output Wire: </div>
+                <div class="specifications__item-right">No wires but solder tabs</div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Connectors
+                  (In/Out): </div>
+                <div class="specifications__item-right">XT60 plug enclosed with package </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Weight / Size: </div>
+                <div class="specifications__item-right">12g / 40x33x5mm </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Firmware: </div>
+                <div class="specifications__item-right">Hobbywing_XRotor_BLHeli-32 Version </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Throttle Calibration: </div>
+                <div class="specifications__item-right">Supported </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">ESC Programming: </div>
+                <div class="specifications__item-right">Stick Programming, BLHeliSuite32 </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">DEO: </div>
+                <div class="specifications__item-right">Supported </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">OneShot Mode: </div>
+                <div class="specifications__item-right">Supported </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Timing: </div>
+                <div class="specifications__item-right">Supported </div>
+              </li>
+
+              <li class="specifications__item">
+                <div class="specifications__item-left">Motor Rotation: </div>
+                <div class="specifications__item-right">Supported </div>
+              </li>
+            </ul>
+
+            <div class="text-center">
+              <div class="product__info-buy product__info-buy--md" data-scroll="#buy">Buy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+
+        <div class="footer__inner">
+          <div class="footer__credits">
+            <div class="footer__copyright">
+              &copy; 2020 germanova.site
+            </div>
+
+
+
+            <div class="footer__social">
+              <a class="footer__social-link" href="https://www.instagram.com/din_fpv/" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#ig"></use>
+                </svg>
+              </a>
+              <a class="footer__social-link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#fb"></use>
+                </svg>
+              </a>
+              <a class="footer__social-link" href="#" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#whatsup"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__copyright">
+              Din Drones LLC
+
+              1267 Willis St., STE 200, Redding, CA 96001
+            </div>
+          </div><!-- /.footer__credits -->
+
+          <nav class="footer__nav">
+            <a class="footer__nav-link" href="#">Shop</a>
+            <a class="footer__nav-link" href="#">About</a>
+            <a class="footer__nav-link" href="#">Blog</a>
+          </nav>
+        </div><!-- /.footer__inner -->
+
+      </div><!-- /.container -->
+    </footer>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</body>
+
+</html>

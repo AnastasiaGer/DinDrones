@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DinDrones</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
+
+</head>
+
+<body>
+  <!-- SVG symbols -->
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <symbol id="fb" aria-hidden="true" focusable="false"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50">
+      <path d="M26 20v-3c0-1.3.3-2 2.4-2H31v-5h-4c-5 0-7 3.3-7 7v3h-4v5h4v15h6V25h4.4l.6-5h-5z" />
+    </symbol>
+
+    <symbol id="ig" aria-hidden="true" focusable="false"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path
+        d="M16 0c-4.349 0-4.891.021-6.593.093c-1.709.084-2.865.349-3.885.745a7.847 7.847 0 0 0-2.833 1.849A7.757 7.757 0 0 0 .84 5.52C.444 6.54.179 7.696.095 9.405c-.077 1.703-.093 2.244-.093 6.593s.021 4.891.093 6.593c.084 1.704.349 2.865.745 3.885a7.847 7.847 0 0 0 1.849 2.833a7.757 7.757 0 0 0 2.833 1.849c1.02.391 2.181.661 3.885.745c1.703.077 2.244.093 6.593.093s4.891-.021 6.593-.093c1.704-.084 2.865-.355 3.885-.745a7.847 7.847 0 0 0 2.833-1.849a7.716 7.716 0 0 0 1.849-2.833c.391-1.02.661-2.181.745-3.885c.077-1.703.093-2.244.093-6.593s-.021-4.891-.093-6.593c-.084-1.704-.355-2.871-.745-3.885a7.847 7.847 0 0 0-1.849-2.833A7.716 7.716 0 0 0 26.478.838c-1.02-.396-2.181-.661-3.885-.745C20.89.016 20.349 0 16 0zm0 2.88c4.271 0 4.781.021 6.469.093c1.557.073 2.405.333 2.968.553a4.989 4.989 0 0 1 1.844 1.197a4.931 4.931 0 0 1 1.192 1.839c.22.563.48 1.411.553 2.968c.072 1.688.093 2.199.093 6.469s-.021 4.781-.099 6.469c-.084 1.557-.344 2.405-.563 2.968c-.303.751-.641 1.276-1.199 1.844a5.048 5.048 0 0 1-1.844 1.192c-.556.22-1.416.48-2.979.553c-1.697.072-2.197.093-6.479.093s-4.781-.021-6.48-.099c-1.557-.084-2.416-.344-2.979-.563c-.76-.303-1.281-.641-1.839-1.199c-.563-.563-.921-1.099-1.197-1.844c-.224-.556-.48-1.416-.563-2.979c-.057-1.677-.084-2.197-.084-6.459c0-4.26.027-4.781.084-6.479c.083-1.563.339-2.421.563-2.979c.276-.761.635-1.281 1.197-1.844c.557-.557 1.079-.917 1.839-1.199c.563-.219 1.401-.479 2.964-.557c1.697-.061 2.197-.083 6.473-.083zm0 4.907A8.21 8.21 0 0 0 7.787 16A8.21 8.21 0 0 0 16 24.213A8.21 8.21 0 0 0 24.213 16A8.21 8.21 0 0 0 16 7.787zm0 13.546c-2.948 0-5.333-2.385-5.333-5.333s2.385-5.333 5.333-5.333c2.948 0 5.333 2.385 5.333 5.333S18.948 21.333 16 21.333zM26.464 7.459a1.923 1.923 0 0 1-1.923 1.921a1.919 1.919 0 1 1 0-3.838c1.057 0 1.923.86 1.923 1.917z" />
+    </symbol>
+
+    <symbol id="whatsup" aria-hidden="true" focusable="false" width="35" height="35"
+      style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);"
+      preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+      <path
+        d="M23.328 19.177c-.401-.203-2.354-1.156-2.719-1.292c-.365-.13-.63-.198-.896.203c-.26.391-1.026 1.286-1.26 1.547s-.464.281-.859.104c-.401-.203-1.682-.62-3.203-1.984c-1.188-1.057-1.979-2.359-2.214-2.76c-.234-.396-.026-.62.172-.818c.182-.182.401-.458.604-.698c.193-.24.255-.401.396-.661c.13-.281.063-.5-.036-.698s-.896-2.161-1.229-2.943c-.318-.776-.651-.677-.896-.677c-.229-.021-.495-.021-.76-.021s-.698.099-1.063.479c-.365.401-1.396 1.359-1.396 3.297c0 1.943 1.427 3.823 1.625 4.104c.203.26 2.807 4.26 6.802 5.979c.953.401 1.693.641 2.271.839c.953.302 1.823.26 2.51.161c.76-.125 2.354-.964 2.688-1.901c.339-.943.339-1.724.24-1.901c-.099-.182-.359-.281-.76-.458zM16.083 29h-.021c-2.365 0-4.703-.641-6.745-1.839l-.479-.286l-5 1.302l1.344-4.865l-.323-.5a13.166 13.166 0 0 1-2.021-7.01c0-7.26 5.943-13.182 13.255-13.182c3.542 0 6.865 1.38 9.365 3.88a13.058 13.058 0 0 1 3.88 9.323C29.328 23.078 23.39 29 16.088 29zM27.359 4.599C24.317 1.661 20.317 0 16.062 0C7.286 0 .14 7.115.135 15.859c0 2.792.729 5.516 2.125 7.927L0 32l8.448-2.203a16.13 16.13 0 0 0 7.615 1.932h.005c8.781 0 15.927-7.115 15.932-15.865c0-4.234-1.651-8.219-4.661-11.214z" />
+    </symbol>
+  </svg>
+  <!-- SVG symbols END -->
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__logo" data-scroll="#intro">DinDrones</div>
+
+        <nav class="nav" id="nav">
+          <ul class="nav__list">
+            <li>
+              <a class="nav__link" href="#" data-scroll="#shop">Shop</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#" data-scroll="#about">About</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#" data-scroll="#blog">Pilots</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="nav-toggle" id="nav_toggle" type="button">
+          <span class="nav-toggle__item">Menu</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <div class="page">
+    <!-- Intro -->
+    <div class="intro" id="intro">
+
+      <div class="container">
+        <div class="intro__wrapper">
+          <div class="intro__photo">
+            <img src="img/items/charger/1.png" alt="">
+          </div>
+          <div class="intro__inner">
+            <h2 class="intro__title">Din battery box
+              <br>– 72 cells</h2>
+            <h1 class="intro__text">4s18p 18650 battery box with individual cell fuses, controlled by high quality BMS
+              with Bluetooth connectivity, enclosed in a custom box with your name on it.</h1>
+
+            <a class="btn btn-inner" href="item-1.html">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="video">
+        <video class="video__media" src="img/bg-video.mp4" autoplay muted loop></video>
+      </div>
+
+      <div class="intro__content">
+        <h2 class="intro__title">Din battery box – 72 cells</h2>
+        <div class="intro__text">
+          4s18p 18650 battery box with individual cell fuses, controlled by high quality BMS with Bluetooth connectivity, enclosed in a custom box with your name on it.
+        </div>
+      </div> -->
+    </div>
+
+    <div class="shop section" id="shop">
+      <div class="container">
+        <div class="shop__container">
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items/screw/image001.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">Gemfan Hurricane</h3>
+              <h2 class="shop__subtitle">MCK 51466-3</h2>
+              <p class="shop__text">Gemfan's Hurricane 51466 Durable 3-Blade Propeller was designed for agile flight at
+                high speed with
+                its incredibly low weight at around 4g.</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-2.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items/motor/image001.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">BrotherHobby Motor</h3>
+              <h2 class="shop__subtitle">GOM 2207.5</h2>
+              <p class="shop__text">GOM 2207.5 is a continuation of Avenger V3 motor with revised bell and luxurious
+                look.</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-3.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items/battery/1.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">Tattu R-Line</h3>
+              <h2 class="shop__subtitle">Lipo Battery Pack</h2>
+              <p class="shop__text">Tattu R-Line Version 4.0 1400mAh 22.2V 130C 6S1P Lipo Battery Pack with XT60 Plug
+                for professional FPV racing competitions.</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-4.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+
+
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items/tbs/tbs-1.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">TBS UNIFY PRO32 </h3>
+              <h2 class="shop__subtitle">NANO 5G8 V1.1</h2>
+              <p class="shop__text">It’s the most comprehensive, future proof, highest quality and overall best nano VTx
+                ever made.</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-5.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items//xrotor/xrotor-1.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">XRotor 40A 4in1 (20x20) </h3>
+              <h2 class="shop__subtitle">BLHeli-32 DShot1200 for FPV Pilots</h2>
+              <p class="shop__text">High performance 32-bit microprocessor with the running frequency of up to 48MHz for
+                excellent performance.</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-6.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+
+          <div class="shop__inner">
+            <div class="shop__photo">
+              <img src="img/items/talon/talon-1.jpg" alt="">
+            </div>
+
+            <div class="shop__content">
+              <h3 class="shop__title">Talon F7 V2 MPU6000 20X20 </h3>
+              <h2 class="shop__subtitle">Flight Controller</h2>
+              <p class="shop__text">Everything you loved about Talon F7 BB with a VTX Pit switch and the proven MPU6000
+                Gyro!</p>
+
+              <div class="shop__buttons">
+                <a class="btn" href="item-7.html">Learn More</a>
+              </div>
+
+            </div><!-- /.shop__content -->
+          </div><!-- /.shop__inner -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="reviews">
+      <div class="container">
+        <div class="reviews-slider">
+
+          <div class="reviews__item">
+            <div class="reviews__text">
+              <p>Never run out of juice again! 50,000 mah 4S #18650 battery box made by @din_fpv Charge all day! I even
+                use it at home so I’m not hearing that server power supply entcerupting zoom calls &#128513;</p>
+            </div>
+
+            <div class="reviews__author">
+              <a class="reviews__item" href="img/reviews/rew3/rew3.jpg" data-fancybox data-fancybox-trigger="rew3"
+                href="javascript:;">
+                <img class="reviews__photo" src="img/reviews/rew3/rew3-small.jpg" />
+                <span class="middle">
+                  <img src="img/zoom.svg" alt="">
+                </span>
+              </a>
+            </div>
+            <div style="display: none;">
+              <a href="img/reviews/rew3/rew3.jpg" data-fancybox="rew3" data-thumb="img/reviews/rew3/rew3-small.jpg"></a>
+
+              <a href="img/reviews/rew3/rew3-box.jpeg" data-fancybox="rew3"
+                data-thumb="img/reviews/rew3/rew3-box-small.jpg"></a>
+            </div>
+          </div>
+
+          <div class="reviews__item">
+            <div class="reviews__text">
+              <p>Awesome box! That’s what I really needed for my freestyle sessions!</p>
+            </div>
+
+            <div class="reviews__author">
+              <a class="reviews__item" href="img/reviews/rew1/rew1.jpg" data-fancybox data-fancybox-trigger="rew1"
+                href="javascript:;">
+                <img class="reviews__photo" src="img/reviews/rew1/rew1-small.jpg" />
+                <span class="middle">
+                  <img src="img/zoom.svg" alt="">
+                </span>
+              </a>
+            </div>
+            <div style="display: none;">
+              <a href="img/reviews/rew1/rew1.jpg" data-fancybox="rew1" data-thumb="img/reviews/rew1/rew1-small.jpg"></a>
+
+              <a href="img/reviews/rew1/rew1-box.jpeg" data-fancybox="rew1"
+                data-thumb="img/reviews/rew1/rew1-box-small.jpg"></a>
+            </div>
+          </div>
+
+          <div class="reviews__item">
+            <div class="reviews__text">
+              <p>Thanks homie!</p>
+            </div>
+
+            <div class="reviews__author">
+              <a class="reviews__item" href="img/reviews/rew2/rew2.jpg" data-fancybox="images-rew2">
+                <img class="reviews__photo" src="img/reviews/rew2/rew2-small.jpg" />
+                <span class="middle">
+                  <img src="img/zoom.svg" alt="">
+                </span>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div><!-- /.container -->
+    </div><!-- /.reviews -->
+
+
+    <!-- <div class="works section" id="shop">
+      <div class="container">
+
+        <div class="works__nav">
+          <a class="works__nav-link" href="#" data-filter="all">All</a>
+          <a class="works__nav-link" href="#" data-filter="drones">Drones</a>
+          <a class="works__nav-link" href="#" data-filter="boxes">Boxes</a>
+          <a class="works__nav-link" href="#" data-filter="platforms">Platforms</a>
+        </div>
+
+
+        <div class="portfolio">
+          <div class="portfolio__col" data-cat="drones">
+            <a href="item-1.html" class="work__link">
+              <div class="work" data-modal="#modal_project_1">
+                <div class="work__image">
+                  <img src="img/drone.jpg" alt="">
+                </div>
+                <div class="work__content">
+                  <div class="work__cat">category: Drones</div>
+                  <div class="work__title">
+                    Project title
+                    <span> 300 $</span>
+                  </div>
+                </div>
+                <span class="card__text">More</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="portfolio__col" data-cat="boxes">
+            <div class="work" data-modal="#modal_project_1">
+              <div class="work__image">
+                <img src="img/drone-2.jpg" alt="">
+              </div>
+              <div class="work__content">
+                <div class="work__cat">category: Boxes</div>
+                <div class="work__title">
+                  Project title
+                  <span> 300 $</span>
+                </div>
+              </div>
+              <span class="card__text">More</span>
+            </div>
+          </div>
+
+          <div class="portfolio__col" data-cat="platforms">
+            <div class="work" data-modal="#modal_project_1">
+              <div class="work__image">
+                <img src="img/drone-3.jpg" alt="">
+              </div>
+              <div class="work__content">
+                <div class="work__cat">category: Platforms</div>
+                <div class="work__title">
+                  Project title
+                  <span> 300 $</span>
+                </div>
+              </div>
+              <span class="card__text">More</span>
+            </div>
+          </div>
+
+          <div class="portfolio__col" data-cat="boxes">
+            <div class="work" data-modal="#modal_project_1">
+              <div class="work__image">
+                <img src="img/drone-2.jpg" alt="">
+              </div>
+              <div class="work__content">
+                <div class="work__cat">category: Boxes</div>
+                <div class="work__title">
+                  Project title
+                  <span> 300 $</span>
+                </div>
+              </div>
+              <span class="card__text">More</span>
+            </div>
+          </div>
+
+          <div class="portfolio__col" data-cat="platforms">
+            <div class="work" data-modal="#modal_project_1">
+              <div class="work__image">
+                <img src="img/drone-3.jpg" alt="">
+              </div>
+              <div class="work__content">
+                <div class="work__cat">category: Platforms</div>
+                <div class="work__title">
+                  Project title
+                  <span> 300 $</span>
+                </div>
+              </div>
+              <span class="card__text">More</span>
+            </div>
+          </div>
+
+          <div class="portfolio__col" data-cat="drones">
+            <div class="work" data-modal="#modal_project_1">
+              <div class="work__image">
+                <img src="img/drone.jpg" alt="">
+              </div>
+              <div class="work__content">
+                <div class="work__cat">category: Drones</div>
+                <div class="work__title">
+                  Project title
+                  <span> 300 $</span>
+                </div>
+              </div>
+              <span class="card__text">More</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a class="btn  btn--sm" href="#">LOAD MORE</a>
+        </div>
+
+      </div>
+    </div> -->
+
+    <!-- LOGOS -->
+    <div class="section section--grey">
+      <div class="container">
+        <div class="logos">
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/ostrich.png" alt="">
+          </div>
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/brothershobby.jpg" alt="">
+          </div>
+
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/sfpv.png" alt="">
+          </div>
+
+          <div class="logos__item">
+            <img class="logos__img logos__img--sheep" src="img/logos/tbs_logo.svg" alt="">
+          </div>
+
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/heli.jpg" alt="">
+          </div>
+
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/hobbywing-logo-300.png" alt="">
+          </div>
+
+          <div class="logos__item">
+            <img class="logos__img" src="img/logos/imr.jpg" alt="">
+          </div>
+
+        </div> <!--  logos -->
+      </div> <!--  container -->
+    </div> <!--  section -->
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="container">
+
+        <div class="about__inner">
+          <div class="about__photo">
+            <img src="img/boss.jpg" alt="">
+            <img src="img/santa-cruz.png" alt="">
+          </div>
+
+          <div class="about__content">
+            <div class="about__text">
+              <p>Hello! My name is Din, I’m an founder of Din Drones and a Drone Racing pilot passionate about
+                electronics and everything RC.</p>
+              <p> In collaboration with Santa Cruz MGP, we are trying to bring FPV to a whole different level, spreading
+                our passion across local Schools and STEM programs.</p>
+              <p>Products from our website will help you to advance in your racing career and become a true Pro!</p>
+              <p>Please join us at <a class="about__link"
+                  href="https://www.multigp.com/chapters/view/?chapter=Santa-Cruz-MultiGP">MultiGP</a> </p>
+              <p>and feel free to email me at: din@dindrones.com</p>
+            </div>
+            <p>You also can contact me</p>
+
+            <div class="social">
+              <a class="social__link" href="https://www.instagram.com/din_fpv/" target="_blank">
+                <svg class="social__icon" width="35" height="35">
+                  <use xlink:href="#ig"></use>
+                </svg>
+              </a>
+              <a class="social__link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+                <svg class="social__icon" width="35" height="35">
+                  <use xlink:href="#fb"></use>
+                </svg>
+              </a>
+              <a class="social__link" href="#" target="_blank">
+                <svg class="social__icon" width="35" height="35">
+                  <use xlink:href="#whatsup"></use>
+                </svg>
+              </a>
+            </div>
+          </div><!-- /.about__content -->
+        </div><!-- /.about__inner -->
+      </div><!-- /.container -->
+    </section>
+
+    <section class="blog section" id="blog">
+      <div class="container">
+        <h3 class="blog__header--title">Sponsored pilots</h3>
+        <div class="blog__container">
+          <div class="blog__item">
+            <div class="blog__photo">
+                <img class="blog__img" width="660" height="486" src="img/sponsor/jake.jpg" alt="">
+            </div>
+            <div class="blog__info">
+              <div class="blog__title">
+                <h3> Jake “Jakehammer” Capobres</h3>
+              </div>
+              <div class="blog__text">
+                DinDrones is committed to expanding the hobby/sport and believes STEM programs are a way to do that. As an example, DinDrones sponsors/trains Jake Capobres-- a 14 year old competitive drone racer in MultiGP. His parents believe his involvement in drone racing has improved him as a student and a person who cares about his community. <a class="blog__link" href="https://www.washingtonpost.com/lifestyle/kidspost/drone-racer-jake-capobres/2020/11/04/feeddfa8-0e58-11eb-8a35-237ef1eb2ef7_story.html" target="_blank">Washington Post</a> and  <a class="blog__link" href="https://www.freep.com/story/news/local/michigan/detroit/2020/10/20/drone-racing-youngest-pilot-ranks-fourth-globally/5976408002/" target="_blank">Detroit Free Press</a> have recently published an article about Jake’s success in FPV world.
+              </div>
+            </div>
+          </div>
+
+          <div class="blog__item">
+            <div class="blog__photo">
+
+                <img class="blog__img" width="660" height="486" src="img/sponsor/cory.jpg" alt="">
+
+            </div>
+            <div class="blog__info">
+              <div class="blog__title">
+                <h3> Cory “Mewo” Ibanez</h3>
+              </div>
+              <div class="blog__text">
+                Mewo's been dominating national and international drone races for the past four years, taking 6th at
+                both the 2018 & 2019 MultiGP National Championships, all while working on his degree. He considers
+                himself an extremely strategic, calculated pilot, only going as fast as he needs to win a given race vs.
+                going full-throttle at all times. DinDrones is honored to be his sponsor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!--  container -->
+    </section> <!--  section -->
+
+
+    <section class="instagram">
+      <div class="instagram__item">
+        <a href="https://www.instagram.com/p/CHO9VR2niey/" class="instagram__link" target="_blank">
+          <img class="instagram__photo" src="img/ig/ig-1.jpg" alt="">
+          <div class="instagram__content">
+            <img src="img/ig.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram__item">
+        <a href="https://www.instagram.com/p/CEdTWCono2t/" class="instagram__link" target="_blank">
+          <img class="instagram__photo" src="img/ig/ig-2.jpg" alt="">
+          <div class="instagram__content">
+            <img src="img/ig.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram__item">
+        <a href="https://www.instagram.com/p/CEPYxpoHY9n/" class="instagram__link" target="_blank">
+          <img class="instagram__photo" src="img/ig/ig-3.jpg" alt="">
+          <div class="instagram__content">
+            <img src="img/ig.svg" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="instagram__item">
+        <a href="https://www.instagram.com/p/CBlv4FMnxg0/" class="instagram__link" target="_blank">
+          <img class="instagram__photo" src="img/ig/ig-4.jpg" alt="">
+          <div class="instagram__content">
+            <img src="img/ig.svg" alt="">
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- <section id="blog">
+      <div class="elfsight-app-f70c895b-432d-46bf-a792-c2ec75931b25">
+        <style>
+          .eapps-link {
+            display: none !important;
+
+          }
+
+        </style>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+
+        <div class="footer__inner">
+          <div class="footer__credits">
+            <div class="footer__copyright">
+              &copy; 2020 germanova.site
+            </div>
+
+
+
+            <div class="footer__social">
+              <a class="footer__social-link" href="https://www.instagram.com/din_fpv/" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#ig"></use>
+                </svg>
+              </a>
+              <a class="footer__social-link" href="https://www.facebook.com/timofey.germanov" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#fb"></use>
+                </svg>
+              </a>
+              <a class="footer__social-link" href="#" target="_blank">
+                <svg class="footer__social-icon" width="35" height="35">
+                  <use xlink:href="#whatsup"></use>
+                </svg>
+              </a>
+            </div>
+
+            <div class="footer__llc">
+              Din Drones LLC
+
+              1267 Willis St., STE 200, Redding, CA 96001
+            </div>
+          </div><!-- /.footer__credits -->
+
+          <nav class="footer__nav">
+            <a class="footer__nav-link" href="#">Shop</a>
+            <a class="footer__nav-link" href="#">About</a>
+            <a class="footer__nav-link" href="#">Blog</a>
+          </nav>
+        </div><!-- /.footer__inner -->
+
+      </div><!-- /.container -->
+    </footer>
+  </div> <!--  page -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+</body>
+
+</html>
