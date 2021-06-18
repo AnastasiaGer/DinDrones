@@ -154,13 +154,12 @@ body {
           align-items: center; }
 
 .header__logo {
-  font-size: 30px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: normal;
-  text-align: left;
+  margin-top: 5px;
   cursor: pointer; }
+
+.header__logo img {
+  width: 300px;
+  height: 55px; }
 
 @media (max-width: 770px) {
   .header {
