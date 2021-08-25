@@ -86,104 +86,213 @@
             </div>
           </div>
 
-
-
-
           <div class="product__info">
             <h3 class="product__info-title">Talon F7 V2 MPU6000 20X20 Flight Controller</h3>
             <div class="product__info-price"> 49.99 $</div>
             <div class="product__info-text">Everything you loved about Talon F7 BB with a VTX Pit switch and the proven MPU6000 Gyro!</div>
-            <form action="" class="product__info-options">
-              <!-- <div class="colors">
-                <div class="colors__title">Colors</div>
-                <label for="">
-                  <input data-tab="#tab_1" type="radio" name="color"> Red
-                </label>
-                <label for="">
-                  <input data-tab="#tab_2" type="radio" name="color"> Blue
-                </label>
-                <label for="">
-                  <input data-tab="#tab_3" type="radio" name="color"> Black
-                </label>
-              </div> -->
-
-              <div class="text-center">
-                <div class="product__info-buy">Payment options</div>
-              </div>
-
-              <div id="smart-button-container">
-
-                <div style="text-align: center;">
-
-                  <div id="paypal-button-container"></div>
-
-                </div>
-
-              </div>
-
-            <script src="https://www.paypal.com/sdk/js?client-id=AW8mY-MRUUUvkEgM7z-MzAFIuJXsLHEyndeWqjRuqnSPfZ5z7zJ2TrnS7qtS_SoJUfqelotmdiv7mxRh&currency=USD" data-sdk-integration-source="button-factory"></script>
-
-            <script>
-
-              function initPayPalButton() {
-
-                paypal.Buttons({
-
-                  style: {
-
-                    shape: 'rect',
-
-                    color: 'silver',
-
-                    layout: 'vertical',
-
-                    label: 'pay',
-
-
-
+            <div id='product-component-1629859605246'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'dindrones.myshopify.com',
+      storefrontAccessToken: '611fde0f7328da5ac69533c165a81ff8',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '7164201435305',
+        node: document.getElementById('product-component-1629859605246'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "title": {
+        "color": "#ffffff"
+      },
+      "button": {
+                    "font-family": "Avant Garde, sans-serif",
+                    "border": "1px solid #000",
+                    ":hover": {
+                      "background-color": "#ffffff",
+                      "color": "#000000",
+                      'border-color': '#000',
+                      'box-shadow': '2px 2px 10px fade(#000, 24%)'
+                    },
+                    "background-color": "#283123",
+                    ":focus": {
+                      "background-color": "#ffffff",
+                      "color": "#000000",
+                      'border-color': '#000',
+                      'box-shadow': '2px 2px 10px fade(#000, 24%)'
+                    },
+                    "border-radius": "0px",
+                    "padding-left": "100px",
+                    "padding-right": "100px"
                   },
-
-
-
-                  createOrder: function(data, actions) {
-
-                    return actions.order.create({
-
-                      purchase_units: [{"description":"BrotherHobby – GOM 2207.5 Motor","amount":{"currency_code":"USD","value":54.61,"breakdown":{"item_total":{"currency_code":"USD","value":49.99},"shipping":{"currency_code":"USD","value":0},"tax_total":{"currency_code":"USD","value":4.62}}}}]
-
-                    });
-
-                  },
-
-
-
-                  onApprove: function(data, actions) {
-
-                    return actions.order.capture().then(function(details) {
-
-                      alert('Transaction completed by ' + details.payer.name.given_name + '!');
-
-                    });
-
-                  },
-
-
-
-                  onError: function(err) {
-
-                    console.log(err);
-
-                  }
-
-                }).render('#paypal-button-container');
-
-              }
-
-              initPayPalButton();
-
-            </script>
-            </form>
-
+      "price": {
+        "font-family": "Avant Garde, sans-serif",
+        "color": "#ffffff"
+      },
+      "compareAt": {
+        "font-family": "Avant Garde, sans-serif",
+        "color": "#ffffff"
+      },
+      "unitPrice": {
+        "font-family": "Avant Garde, sans-serif",
+        "color": "#ffffff"
+      },
+      "description": {
+        "font-size": "17px",
+        "color": "#000000"
+      }
+    },
+    "contents": {
+      "img": false,
+      "title": false,
+      "price": false
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-family": "Avant Garde, sans-serif",
+        ":hover": {
+          "background-color": "#44533c"
+        },
+        "background-color": "#283123",
+        ":focus": {
+          "background-color": "#44533c"
+        },
+        "border-radius": "0px",
+        "padding-left": "100px",
+        "padding-right": "100px"
+      },
+      "title": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "bold",
+        "font-size": "26px",
+        "color": "#4c4c4c"
+      },
+      "price": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "18px",
+        "color": "#4c4c4c"
+      },
+      "compareAt": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "unitPrice": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "15.299999999999999px",
+        "color": "#4c4c4c"
+      },
+      "description": {
+        "font-family": "Helvetica Neue, sans-serif",
+        "font-weight": "normal",
+        "font-size": "14px",
+        "color": "#4c4c4c"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        "font-family": "Avant Garde, sans-serif",
+        ":hover": {
+          "background-color": "#44533c"
+        },
+        "background-color": "#283123",
+        ":focus": {
+          "background-color": "#44533c"
+        },
+        "border-radius": "0px"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-family": "Avant Garde, sans-serif",
+        "background-color": "#283123",
+        ":hover": {
+          "background-color": "#44533c"
+        },
+        ":focus": {
+          "background-color": "#44533c"
+        }
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
           </div>
 
         </div>
