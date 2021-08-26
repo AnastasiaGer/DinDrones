@@ -1301,7 +1301,8 @@ body {
   display: block; }
 
 .product__info {
-  padding: 2rem; }
+  padding: 2rem;
+  margin-bottom: 4rem; }
 
 .product__info-title {
   font-size: 27px;
@@ -1392,6 +1393,8 @@ body {
       display: none !important; }
     .product-slider__slider-btnnext {
       display: none !important; }
+  .product__info {
+    margin-bottom: 10rem; }
   .product__info-text {
     font-size: 18px; } }
 
@@ -1400,7 +1403,7 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .product__info {
-    width: 100%; } }
+    margin-bottom: 12rem; } }
 
 .information__inner {
   display: -webkit-box;

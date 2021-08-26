@@ -102,6 +102,7 @@
 
 .product__info {
   padding: 2rem;
+  margin-bottom: 4rem;
 }
 
 .product__info-title {
@@ -210,6 +211,10 @@
     }
   }
 
+  .product__info {
+    margin-bottom: 10rem;
+  }
+
   .product__info-text {
     font-size: 18px;
   }
@@ -223,6 +228,6 @@
   }
 
   .product__info {
-    width: 100%;
+    margin-bottom: 12rem;
   }
 }
