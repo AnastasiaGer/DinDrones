@@ -1414,7 +1414,8 @@ body {
   margin-bottom: 50px; }
 
 .information__photo {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 10px; }
 
 .information__photo {
   position: relative; }
