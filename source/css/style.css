@@ -1244,14 +1244,14 @@ body {
   bottom: -30px; }
 
 .product-slider .slick-dots button {
-  background-color: #C4C4C4;
+  background-color: #c4c4c4;
   height: 14px;
   width: 14px; }
 
 .product-slider .slick-dots .slick-active button,
 .product-slider .slick-dots .slick-active button:active {
   background-color: #fff;
-  border: .5px solid #06517d; }
+  border: 0.5px solid #06517d; }
 
 .product-slider__slider-btn {
   position: absolute;
@@ -1304,6 +1304,10 @@ body {
   padding: 2rem;
   margin-bottom: 4rem; }
 
+.product__info-options {
+  text-align: center;
+  margin-top: 35px; }
+
 .product__info-title {
   font-size: 27px;
   margin-bottom: 1rem; }
@@ -1335,10 +1339,10 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  -webkit-transition: background-color .2s linear, color .2s linear, border-color .2s linear, -webkit-box-shadow .2s linear;
-  transition: background-color .2s linear, color .2s linear, border-color .2s linear, -webkit-box-shadow .2s linear;
-  transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, border-color .2s linear;
-  transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, border-color .2s linear, -webkit-box-shadow .2s linear;
+  -webkit-transition: background-color 0.2s linear, color 0.2s linear, border-color 0.2s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, border-color 0.2s linear, -webkit-box-shadow 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear, border-color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, box-shadow 0.2s linear, border-color 0.2s linear, -webkit-box-shadow 0.2s linear;
   margin-bottom: 20px; }
   .product__info-buy--md {
     cursor: pointer;
